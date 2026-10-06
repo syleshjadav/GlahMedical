@@ -7,7 +7,7 @@
  *   TURNSTILE_SECRET_KEY  - Turnstile secret key (SECRET)
  *   RESEND_API_KEY        - Resend API key (SECRET)
  *   MAIL_TO               - Office inbox that receives requests, e.g. glahmedicalgroup@yahoo.com
- *   MAIL_FROM             - Verified sender, e.g. "Glah Website <appointments@glahmedicalgroup.net>"
+ *   MAIL_FROM             - Verified sender, e.g. "Glah Website <appointments@glahmedicalgroup.com>"
  * Never commit real values. For local dev, put them in .dev.vars (git-ignored).
  */
 

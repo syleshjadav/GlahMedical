@@ -7,6 +7,7 @@ index.html                 Page (inline CSS, inline SVG icons)
 js/site.js                 Menu + form submit (version-stamped: site.js?v=1.1.0)
 functions/api/contact.js   POST /api/contact – Turnstile check, validation, email via Resend
 _headers                   Security headers + CSP + caching
+sitemap.xml / robots.txt   SEO (submit sitemap in Google Search Console)
 .dev.vars.example          Local env template (copy to .dev.vars – git-ignored)
 ```
 
@@ -19,10 +20,10 @@ _headers                   Security headers + CSP + caching
 ## Setup (in order)
 
 1. **Turnstile** – Cloudflare dashboard → Turnstile → Add widget  
-   - Hostname: `glahmedicalgroup.net` (+ `www.` and your `*.pages.dev` preview host)  
+   - Hostname: `glahmedicalgroup.com` (+ `www.` and your `*.pages.dev` preview host)  
    - Mode: Managed  
    - Put the **site key** in `index.html` → `data-sitekey="..."` (currently Cloudflare's always-pass TEST key).
-2. **Resend** (email sender) – create account at resend.com, add and verify the domain `glahmedicalgroup.net`
+2. **Resend** (email sender) – create account at resend.com, add and verify the domain `glahmedicalgroup.com`
    (it gives DNS records; add them in Cloudflare DNS), then create an API key.
 3. **Pages environment variables** – Pages project → Settings → Variables and Secrets (Production *and* Preview):
 
@@ -31,7 +32,7 @@ _headers                   Security headers + CSP + caching
    | `TURNSTILE_SECRET_KEY` | Secret | from step 1 |
    | `RESEND_API_KEY` | Secret | from step 2 |
    | `MAIL_TO` | Text | office inbox, e.g. `glahmedicalgroup@yahoo.com` (comma-separate for several) |
-   | `MAIL_FROM` | Text | `Glah Website <appointments@glahmedicalgroup.net>` (must be on the verified domain) |
+   | `MAIL_FROM` | Text | `Glah Website <appointments@glahmedicalgroup.com>` (must be on the verified domain – **not** the yahoo.com address; Yahoo's DMARC policy rejects mail sent "from" yahoo.com by other services) |
 
    Never put real keys in the repo.
 4. **Rate limiting** – Security → WAF → Rate limiting rules → new rule:  
@@ -52,6 +53,8 @@ With the test keys, Turnstile always passes. Email only sends with a real `RESEN
 **Tested here:** honeypot drop, missing-token rejection, GET → 405, headers served.  
 **Not tested here:** the live Turnstile verification and Resend email send – the build sandbox couldn't reach those
 services. Test once on a Pages preview deploy.
+
+**SEO after launch:** verify the site in Google Search Console and submit `/sitemap.xml`; claim/update the Google Business Profile for both offices; add the Camp Hill street address to the JSON-LD block in `index.html`; update `<lastmod>` in `sitemap.xml` when content changes.
 
 **Still to fill in:** Camp Hill street address, office hours, insurance FAQ answer, real photos, real Turnstile site key.
 

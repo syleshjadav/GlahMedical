@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /api/
+
+Sitemap: https://www.glahmedicalgroup.net/sitemap.xml

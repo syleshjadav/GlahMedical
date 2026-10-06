@@ -1,11 +1,14 @@
-# Glah Medical Group – Website (Cloudflare Pages)
+# Glah Medical Group – Website (Cloudflare Workers + static assets)
 
-Static one-page site + one Pages Function for the appointment form.
+Static one-page site served as Worker static assets, plus a small Worker script for the appointment form.
 
 ```
 index.html                 Page (inline CSS, inline SVG icons)
 js/site.js                 Menu + form submit (version-stamped: site.js?v=1.1.0)
-functions/api/contact.js   POST /api/contact – Turnstile check, validation, email via Resend
+src/worker.js              Worker entry: /api/contact -> form handler, everything else -> static files
+functions/api/contact.js   Form handler – Turnstile check, validation, email via Resend
+wrangler.jsonc             Worker config (name must match the Worker in the dashboard)
+.assetsignore              Keeps code/config files from being published as public files
 _headers                   Security headers + CSP + caching
 sitemap.xml / robots.txt   SEO (submit sitemap in Google Search Console)
 .dev.vars.example          Local env template (copy to .dev.vars – git-ignored)
@@ -22,10 +25,10 @@ sitemap.xml / robots.txt   SEO (submit sitemap in Google Search Console)
 1. **Turnstile** – Cloudflare dashboard → Turnstile → Add widget  
    - Hostname: `glahmedicalgroup.com` (+ `www.` and your `*.pages.dev` preview host)  
    - Mode: Managed  
-   - Put the **site key** in `index.html` → `data-sitekey="..."` (currently Cloudflare's always-pass TEST key).
+   - Put the **site key** in `index.html` → `data-sitekey="..."` (live key set).
 2. **Resend** (email sender) – create account at resend.com, add and verify the domain `glahmedicalgroup.com`
    (it gives DNS records; add them in Cloudflare DNS), then create an API key.
-3. **Pages environment variables** – Pages project → Settings → Variables and Secrets (Production *and* Preview):
+3. **Worker variables** – Workers & Pages → your Worker → Settings → Variables and Secrets:
 
    | Name | Type | Value |
    |---|---|---|
@@ -38,25 +41,24 @@ sitemap.xml / robots.txt   SEO (submit sitemap in Google Search Console)
 4. **Rate limiting** – Security → WAF → Rate limiting rules → new rule:  
    *URI Path equals `/api/contact`* and *Method equals `POST`* → Block; set requests/period per IP to the
    tightest your plan allows (target ≈ 5 per minute; the Free plan only offers a 10-second window, so use e.g. 2 per 10 s).
-5. **Deploy** – connect this folder's git repo to Cloudflare Pages (build command: none, output directory: `/`),
-   or run `npx wrangler pages deploy .`
+5. **Deploy** – push to GitHub (Workers Builds runs the deploy), or run the Wrangler deploy command locally.
 
 ## Local testing
 ```
 copy .dev.vars.example .dev.vars
-npx wrangler pages dev .
+npx wrangler dev
 ```
 With the test keys, Turnstile always passes. Email only sends with a real `RESEND_API_KEY`.
 
 ## Built vs. follow-up
 **Built:** page, mobile menu, form with Turnstile + honeypot, `/api/contact` function, security headers/CSP, caching.  
-**Tested here:** honeypot drop, missing-token rejection, GET → 405, headers served.  
+**Tested here (local Worker):** static files + headers served, code/config files return 404, honeypot drop, missing-token rejection, GET /api/contact → 405.  
 **Not tested here:** the live Turnstile verification and Resend email send – the build sandbox couldn't reach those
 services. Test once on a Pages preview deploy.
 
 **SEO after launch:** verify the site in Google Search Console and submit `/sitemap.xml`; claim/update the Google Business Profile for both offices; add the Camp Hill street address to the JSON-LD block in `index.html`; update `<lastmod>` in `sitemap.xml` when content changes.
 
-**Still to fill in:** Camp Hill street address, office hours, insurance FAQ answer, real photos, real Turnstile site key.
+**Still to fill in:** Camp Hill street address, office hours, insurance FAQ answer, real photos.
 
 **Note:** the form is plain email, not HIPAA-secure. Keep the "don't include medical details" notice.
 When changing `js/site.js`, bump `?v=` in `index.html`.

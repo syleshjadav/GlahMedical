@@ -1,9 +1,9 @@
 /**
- * Cloudflare Pages Function: POST /api/contact
+ * POST /api/contact handler (called from src/worker.js)
  * Verifies Cloudflare Turnstile server-side, checks a honeypot, validates input,
  * then emails the appointment request via the Resend API.
  *
- * Environment variables (Pages > Settings > Variables and Secrets; use "Secret" type for keys):
+ * Environment variables (Worker > Settings > Variables and Secrets; use "Secret" type for keys):
  *   TURNSTILE_SECRET_KEY  - Turnstile secret key (SECRET)
  *   RESEND_API_KEY        - Resend API key (SECRET)
  *   MAIL_TO               - Office inbox that receives requests, e.g. glahmedicalgroup@yahoo.com

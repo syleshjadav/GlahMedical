@@ -1,0 +1,12 @@
+# Files that must NOT be published as public static files
+.git
+.gitignore
+.assetsignore
+.dev.vars
+.dev.vars.example
+.wrangler
+node_modules
+functions
+src
+wrangler.jsonc
+README.md

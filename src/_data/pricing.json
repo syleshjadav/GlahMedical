@@ -1,9 +1,9 @@
 {
   "_comment": "Prices shown on the Pricing page. Physicals intentionally show 'Call for pricing' (practice request).",
   "weightLoss": [
-    { "name": "Initial consultation", "price": "$55", "unit": "", "featured": false,
+    { "name": "Initial consultation", "price": "$65", "unit": "", "featured": false,
       "items": ["Weight, blood pressure and measurements", "A look at how you eat now", "Your personalized eating plan"] },
-    { "name": "Weekly visits", "price": "$30", "unit": "per visit", "featured": true,
+    { "name": "Follow-up office visits", "price": "$40", "unit": "per visit", "featured": true,
       "items": ["Weight and blood pressure check", "Food diary review and plan adjustments", "New nutrition reading and recipes each week"] },
     { "name": "Appetite suppressants", "price": "$8–$16", "unit": "per week", "featured": false,
       "items": ["Only if a physician decides they are right for you", "Prescribed by a physician", "One-week supply"] }

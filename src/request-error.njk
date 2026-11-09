@@ -1,0 +1,21 @@
+---
+layout: layouts/page.njk
+title: Request Not Sent
+permalink: /contact/error/
+eyebrow: Something went wrong
+heading: We couldn't send your request
+noindex: true
+eleventyExcludeFromCollections: true
+hideCta: true
+---
+<section class="section">
+  <div class="container narrow text-center">
+    <p class="lead">Please call the office nearest you, or go back and try again.</p>
+    <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+      {%- for o in site.offices %}
+      <a class="btn btn-primary" href="tel:{{ o.phoneHref }}"><i class="fa-solid fa-phone" aria-hidden="true"></i> {{ o.name }} {{ o.phone }}</a>
+      {%- endfor %}
+      <a class="btn btn-outline-primary" href="/contact/#request">Try again</a>
+    </div>
+  </div>
+</section>

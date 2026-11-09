@@ -1,0 +1,22 @@
+---
+layout: layouts/page.njk
+title: Request Sent
+permalink: /contact/thanks/
+eyebrow: Thank you
+heading: Your request was sent
+noindex: true
+eleventyExcludeFromCollections: true
+hideCta: true
+---
+<section class="section">
+  <div class="container narrow text-center">
+    <div class="success-mark" aria-hidden="true"><i class="fa-solid fa-check"></i></div>
+    <p class="lead">Our staff will call you back during office hours. If you need us sooner, please call.</p>
+    <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+      {%- for o in site.offices %}
+      <a class="btn btn-primary" href="tel:{{ o.phoneHref }}"><i class="fa-solid fa-phone" aria-hidden="true"></i> {{ o.name }} {{ o.phone }}</a>
+      {%- endfor %}
+      <a class="btn btn-outline-primary" href="/">Back to the home page</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,171 @@
+---
+layout: layouts/base.njk
+isHome: true
+bodyClass: home
+description: "Glah Medical Group: physician-guided weight loss for over 40 years, plus immigration (I-693), driver's license (DL-180) and school physicals. Offices in Lancaster and Camp Hill, PA."
+---
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <p class="eyebrow">Lancaster &amp; Camp Hill, PA &middot; {{ site.yearsInPractice }} years of care</p>
+        <h1 class="hero-title">Take the first step to <em>feeling good</em>.</h1>
+        <p class="lead">Physician-based weight loss counseling that fits real life, with one personal eating plan built on food from your own grocery store. We also do immigration, driver's license and school physicals at both offices.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="/contact/#request">Request an appointment</a>
+          <a class="btn btn-outline-primary btn-lg" href="/weight-loss/">How weight loss works</a>
+        </div>
+        <ul class="hero-facts list-unstyled">
+          {%- for o in site.offices %}
+          <li><i class="fa-solid fa-phone" aria-hidden="true"></i> {{ o.name }} <a href="tel:{{ o.phoneHref }}">{{ o.phone }}</a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+      <div class="col-lg-5">
+        <aside class="hero-card" aria-labelledby="visit-card-heading">
+          <h2 id="visit-card-heading" class="h4">What happens at your weekly visit</h2>
+          <ul class="check-list mb-4">
+            <li>Weight and blood pressure check</li>
+            <li>Food diary review and plan adjustments</li>
+            <li>New nutrition tips and recipes to take home</li>
+          </ul>
+          <div class="hero-price">
+            <div><span class="hero-price-num">$55</span><span>first consultation</span></div>
+            <div><span class="hero-price-num">$30</span><span>per weekly visit</span></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust" role="region" aria-label="Why patients choose us">
+  <div class="container">
+    <ul class="list-unstyled">
+      <li><i class="fa-solid fa-user-doctor" aria-hidden="true"></i> Physician-supervised care</li>
+      <li><i class="fa-solid fa-basket-shopping" aria-hidden="true"></i> Real food from your grocery store</li>
+      <li><i class="fa-solid fa-ban" aria-hidden="true"></i> No required shakes or supplements</li>
+      <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Lancaster &amp; Camp Hill offices</li>
+    </ul>
+  </div>
+</div>
+
+<section class="section" aria-labelledby="services-heading">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Our services</p>
+      <h2 id="services-heading">Weight loss care and the physicals you need</h2>
+      <p class="section-intro">Every service is available at both offices. Call either one, or send a request.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <a class="feature-card" href="/weight-loss/">
+          <span class="feature-icon feature-icon-coral"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></span>
+          <h3>Physician-guided weight loss</h3>
+          <p>A personal eating plan and weekly one-on-one visits to help you lose the weight and keep it off.</p>
+        </a>
+      </div>
+      {%- for p in physicals.list %}
+      <div class="col-md-6 col-lg-3">
+        <a class="feature-card" href="{{ p.url }}">
+          <span class="feature-icon"><i class="fa-solid {{ p.icon }}" aria-hidden="true"></i></span>
+          <h3>{{ p.name }}</h3>
+          <p>{{ p.summary }}</p>
+        </a>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint" aria-labelledby="benefits-heading">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">One plan, many benefits</p>
+      <h2 id="benefits-heading">More than a number on the scale</h2>
+      <p class="section-intro">A single eating plan you can keep up can help your health in several ways at once.</p>
+    </div>
+    <div class="row g-4">
+      {%- set benefits = [
+        ["fa-weight-scale", "Weight loss", "Lose weight steadily with a plan built around your body, your schedule and the foods you enjoy."],
+        ["fa-heart-pulse", "Heart health", "Healthy eating helps support better blood pressure, cholesterol and triglyceride numbers."],
+        ["fa-droplet", "Blood sugar", "Balanced meals and weight loss can help keep blood sugar in a healthier range."],
+        ["fa-shield-heart", "Lower cancer risk", "A nutrient-rich diet and a healthy weight are linked to a lower risk of several cancers."],
+        ["fa-person-walking", "Healthy aging", "Feel more energetic and stay active longer with food that supports your whole body."],
+        ["fa-bone", "Less joint pain", "Every pound lost takes pressure off knees, hips and back, so moving feels easier."]
+      ] %}
+      {%- for b in benefits %}
+      <div class="col-sm-6 col-lg-4">
+        <div class="feature-card feature-card-static">
+          <span class="feature-icon{% if loop.index is even %} feature-icon-coral{% endif %}"><i class="fa-solid {{ b[0] }}" aria-hidden="true"></i></span>
+          <h3>{{ b[1] }}</h3>
+          <p>{{ b[2] }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="approach-heading">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-5">
+        <figure class="quote-panel mb-0">
+          <blockquote><p>You've tried everything else. Now it's time to give Glah Medical Group a call.</p></blockquote>
+          <figcaption>For more than 40 years we have helped people in Central Pennsylvania reach a healthy weight and keep it, with a doctor-guided plan and a team that knows them by name.</figcaption>
+        </figure>
+      </div>
+      <div class="col-lg-7">
+        <p class="eyebrow">How it works</p>
+        <h2 id="approach-heading">Four simple steps to get started</h2>
+        <ol class="steps">
+          <li><span class="step-num" aria-hidden="true">1</span><div><h3>Call or send a request</h3><p>Reach either office to schedule your first appointment at a time that works for you.</p></div></li>
+          <li><span class="step-num" aria-hidden="true">2</span><div><h3>Initial consultation</h3><p>We check weight, blood pressure and measurements, look at how you eat now, and build your eating plan.</p></div></li>
+          <li><span class="step-num" aria-hidden="true">3</span><div><h3>Weekly visits</h3><p>Quick check-ins keep you on track. We review your food diary and adjust the plan as you go.</p></div></li>
+          <li><span class="step-num" aria-hidden="true">4</span><div><h3>Keep it off</h3><p>You leave with habits, recipes and coping skills that last, not just a diet.</p></div></li>
+        </ol>
+        <p class="mt-4 mb-0"><a class="link-arrow" href="/weight-loss/">More about our weight loss program <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint" aria-labelledby="physicals-heading">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-5">
+        <p class="eyebrow">Physical exams</p>
+        <h2 id="physicals-heading">Forms filled out right the first time</h2>
+        <p>Whether it is for a green card, a learner's permit or school, we know which form you need and what the agency or school expects to see on it. Bring the form, your ID and your records, and we take care of the rest.</p>
+        <a class="btn btn-outline-primary mt-2" href="/physicals/">Compare our physicals</a>
+      </div>
+      <div class="col-lg-7">
+        <ul class="treatment-list list-unstyled">
+          {%- for p in physicals.list %}
+          <li><a href="{{ p.url }}"><i class="fa-solid {{ p.icon }}" aria-hidden="true"></i><span>{{ p.name }}</span></a></li>
+          {%- endfor %}
+        </ul>
+        <p class="fine-print mt-3 mb-0">Physicals: {{ pricing.physicalsNote | lower }} at either office.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="visit-heading">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Visit us</p>
+      <h2 id="visit-heading">Two offices in Central Pennsylvania</h2>
+    </div>
+    <div class="row g-4 justify-content-center">
+      {%- for o in site.offices %}
+      <div class="col-md-6 col-xl-5">
+        {% include "partials/office-card.njk" %}
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{% include "partials/cta.njk" %}

@@ -1,0 +1,33 @@
+---
+layout: layouts/page.njk
+title: Terms & Medical Disclaimer
+permalink: /terms/
+eyebrow: Legal
+lead: Please read these terms before using this website.
+description: "Website terms of use and medical disclaimer for Glah Medical Group."
+hideCta: true
+---
+<section class="section">
+  <div class="container narrow prose">
+    <h2>Not medical advice</h2>
+    <p>The information on this website is for general education only. It is not medical advice and does not replace an evaluation by a qualified provider. Do not start, stop or change any treatment or medicine based on this website. Using this website does not create a patient–provider relationship.</p>
+
+    <h2>Results vary</h2>
+    <p>Patient results described on this site are examples. Individual results vary.</p>
+
+    <h2>Government forms and rules</h2>
+    <p>Information about USCIS, PennDOT and school requirements is a summary to help you prepare. Those agencies set and change their own rules. Always check the official pages we link to, or ask your attorney or school.</p>
+
+    <h2>Emergencies</h2>
+    <p>Do not use this website or its forms for urgent or emergency needs. If you are having a medical emergency, call 911 or go to the nearest emergency room.</p>
+
+    <h2>Accuracy</h2>
+    <p>We work to keep this website accurate and up to date, but information such as hours, prices and services may change. Please call to confirm before your visit.</p>
+
+    <h2>Use of content</h2>
+    <p>The text and images on this website belong to {{ site.legalName }} or are used with permission. Please do not copy them without our written permission.</p>
+
+    <h2>Contact</h2>
+    <p>{{ site.name }}. {% for o in site.offices %}{{ o.name }}: <a href="tel:{{ o.phoneHref }}">{{ o.phone }}</a>{% if not loop.last %} &middot; {% endif %}{% endfor %}.</p>
+  </div>
+</section>

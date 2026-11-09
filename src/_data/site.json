@@ -1,0 +1,47 @@
+{
+  "_comment": "Practice details used on every page. Change a value here and it updates site-wide. Values marked xxxx are waiting on the practice.",
+  "name": "Glah Medical Group",
+  "shortName": "Glah",
+  "legalName": "Glah Medical Group",
+  "tagline": "Physician-guided weight loss and physical exams in Lancaster and Camp Hill, PA",
+  "url": "https://glahmedicalgroup.com",
+  "email": "glahmedicalgroup@yahoo.com",
+  "yearsInPractice": "40+",
+  "_turnstileSiteKey": "Public Cloudflare Turnstile site key (safe to commit). The Worker swaps in TURNSTILE_SITE_KEY when that variable is set, e.g. the always-pass test key for local preview and the demo.",
+  "turnstileSiteKey": "0x4AAAAAAFPSQSI6R2yAKXkG",
+  "_offices": "Both offices offer weight loss visits and all three physicals. Leave hours empty to show 'Call for current hours'. hoursSchema is the search-engine version of hours; keep both in sync.",
+  "offices": [
+    {
+      "id": "lancaster",
+      "name": "Lancaster",
+      "phone": "717-397-7718",
+      "phoneHref": "+17173977718",
+      "street": "2207 Columbia Ave",
+      "city": "Lancaster",
+      "state": "PA",
+      "zip": "",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Glah+Medical+Group+2207+Columbia+Ave+Lancaster+PA",
+      "hours": [],
+      "hoursSchema": []
+    },
+    {
+      "id": "camp-hill",
+      "name": "Camp Hill",
+      "phone": "717-737-8400",
+      "phoneHref": "+17177378400",
+      "street": "xxxx",
+      "city": "Camp Hill",
+      "state": "PA",
+      "zip": "",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Glah+Medical+Group+Camp+Hill+PA",
+      "hours": [],
+      "hoursSchema": []
+    }
+  ],
+  "social": [
+    { "name": "Facebook", "icon": "fa-facebook-f", "url": "https://www.facebook.com/glahmedicalgroup/" },
+    { "name": "Instagram", "icon": "fa-instagram", "url": "https://www.instagram.com/glahmedicalgroup/" },
+    { "name": "Pinterest", "icon": "fa-pinterest-p", "url": "https://www.pinterest.com/glahmedicalgroup/" }
+  ],
+  "assetVersion": "2.0.0"
+}

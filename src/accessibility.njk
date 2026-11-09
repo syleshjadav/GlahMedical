@@ -1,0 +1,33 @@
+---
+layout: layouts/page.njk
+title: Accessibility Statement
+permalink: /accessibility/
+eyebrow: Accessibility
+lead: We want everyone to be able to use this website, including people who use assistive technology.
+description: "Accessibility statement for the Glah Medical Group website."
+hideCta: true
+---
+<section class="section">
+  <div class="container narrow prose">
+    <h2>Our commitment</h2>
+    <p>{{ site.name }} aims for this website to meet the Web Content Accessibility Guidelines (WCAG) 2.2 at Level AA. The site is built to work with keyboards, screen readers and browser zoom, with sufficient color contrast, descriptive links and labeled form fields.</p>
+
+    <h2>What we have done</h2>
+    <ul>
+      <li>A "Skip to main content" link at the top of every page</li>
+      <li>Clear heading structure and page landmarks</li>
+      <li>Text alternatives for meaningful images</li>
+      <li>Color contrast that meets WCAG AA</li>
+      <li>Forms with visible labels, clear instructions and error messages that are announced to screen readers</li>
+      <li>Layouts that adapt to phones and to zoom up to 200%</li>
+    </ul>
+
+    <h2>Security check on the request form</h2>
+    <p>The appointment request form uses Cloudflare Turnstile to stop spam. It usually runs without asking you to do anything. If it gives you trouble, please call us instead.</p>
+
+    <h2>Need help or found a problem?</h2>
+    <p>If any part of this site is hard to use, please let us know so we can fix it, and we will help you get the information you need another way. Call {% for o in site.offices %}{{ o.name }} <a href="tel:{{ o.phoneHref }}">{{ o.phone }}</a>{% if not loop.last %} or {% endif %}{% endfor %}, or email <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+    <h2>Visiting our offices</h2>
+    <p>If you need an accommodation for your visit, please tell us when you schedule.</p>
+  </div>
+</section>

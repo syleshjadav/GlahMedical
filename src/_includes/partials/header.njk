@@ -1,0 +1,42 @@
+{%- set nav = [
+  { url: "/", label: "Home" },
+  { url: "/weight-loss/", label: "Weight Loss" },
+  { url: "/physicals/", label: "Physicals" },
+  { url: "/pricing/", label: "Pricing" },
+  { url: "/faq/", label: "FAQ" },
+  { url: "/contact/", label: "Locations & Contact" }
+] %}
+<header class="site-header">
+  <div class="topbar">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between gap-2">
+      <ul class="topbar-links list-unstyled d-flex flex-wrap gap-3 mb-0">
+        {%- for o in site.offices %}
+        <li><i class="fa-solid fa-phone" aria-hidden="true"></i>{{ o.name }}: <a href="tel:{{ o.phoneHref }}">{{ o.phone }}</a></li>
+        {%- endfor %}
+      </ul>
+      <p class="topbar-note mb-0 d-none d-md-block"><i class="fa-solid fa-envelope" aria-hidden="true"></i><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-xl main-nav" aria-label="Main">
+    <div class="container">
+      <a class="navbar-brand brand" href="/">
+        <img src="/assets/img/logo-mark.svg" width="44" height="44" alt="">
+        <span class="brand-text"><span class="brand-name">{{ site.name }}</span><span class="brand-sub">Weight loss &amp; physicals</span></span>
+        <span class="visually-hidden"> home</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Open menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-xl-center">
+          {%- for item in nav %}
+          {%- set active = (page.url == item.url) or (item.url != "/" and page.url.startsWith(item.url)) %}
+          <li class="nav-item"><a class="nav-link{% if active %} active{% endif %}" href="{{ item.url }}"{% if active %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+          {%- endfor %}
+          <li class="nav-item nav-cta"><a class="btn btn-primary" href="/contact/#request"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Request appointment</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

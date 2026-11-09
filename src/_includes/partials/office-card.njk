@@ -1,0 +1,25 @@
+<div class="contact-card office-card">
+  <span class="feature-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+  <h2>{{ o.name }} office</h2>
+  <address class="mb-2">
+    {%- if o.street | pending %}
+    {{ o.city }}, {{ o.state }}
+    {%- else %}
+    {{ o.street }}<br>{{ o.city }}, {{ o.state }}{% if o.zip %} {{ o.zip }}{% endif %}
+    {%- endif %}
+  </address>
+  {%- if o.street | pending %}<p class="placeholder-note">xxxx — street address to be supplied by the practice.</p>{% endif %}
+  <p class="contact-big"><a href="tel:{{ o.phoneHref }}"><i class="fa-solid fa-phone" aria-hidden="true"></i> {{ o.phone }}</a></p>
+  <h3 class="h6 mt-3">Office hours</h3>
+  {%- if o.hours.length %}
+  <dl class="hours">
+    {%- for h in o.hours %}
+    <div><dt>{{ h.days }}</dt><dd>{{ h.time }}</dd></div>
+    {%- endfor %}
+  </dl>
+  {%- else %}
+  <p>Please call for current hours.</p>
+  {%- endif %}
+  <p class="office-services"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Weight loss visits and all physicals</p>
+  <a class="btn btn-outline-primary" href="{{ o.mapsUrl }}" target="_blank" rel="noopener">Get directions<span class="visually-hidden"> to the {{ o.name }} office (opens Google Maps in a new tab)</span></a>
+</div>

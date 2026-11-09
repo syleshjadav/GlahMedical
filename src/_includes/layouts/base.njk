@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- set pageTitle = (title + " | " + site.name) if title and not isHome else (site.name + " | Weight Loss & Physicals in Lancaster and Camp Hill, PA") %}
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ description or site.tagline }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  {%- if noindex %}<meta name="robots" content="noindex">{% endif %}
+  <meta name="theme-color" content="#16302b">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ description or site.tagline }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}/assets/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+
+  <link rel="preload" href="/lib/fonts/source-serif-4/files/source-serif-4-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/lib/fonts/source-sans-3/files/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css?v=5.3.8">
+  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css?v=7.3.1">
+  <link rel="stylesheet" href="/assets/css/site.css?v={{ site.assetVersion }}">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalOrganization",
+    "name": {{ site.name | json | safe }},
+    "url": {{ site.url | json | safe }},
+    "logo": {{ (site.url + "/assets/img/icon-512.png") | json | safe }},
+    "image": {{ (site.url + "/assets/img/og-image.jpg") | json | safe }},
+    "email": {{ site.email | json | safe }},
+    "sameAs": [{% for s in site.social %}{{ s.url | json | safe }}{% if not loop.last %}, {% endif %}{% endfor %}],
+    "department": [
+      {%- for o in site.offices %}
+      {
+        "@type": "MedicalClinic",
+        "name": {{ (site.name + " – " + o.name) | json | safe }},
+        "telephone": {{ o.phone | json | safe }},
+        "address": {
+          "@type": "PostalAddress",
+          {%- if not (o.street | pending) %}
+          "streetAddress": {{ o.street | json | safe }},
+          {%- endif %}
+          {%- if o.zip %}
+          "postalCode": {{ o.zip | json | safe }},
+          {%- endif %}
+          "addressLocality": {{ o.city | json | safe }},
+          "addressRegion": {{ o.state | json | safe }},
+          "addressCountry": "US"
+        }
+        {%- if o.hoursSchema.length %},
+        "openingHours": {{ o.hoursSchema | json | safe }}
+        {%- endif %}
+      }{% if not loop.last %},{% endif %}
+      {%- endfor %}
+    ]
+  }
+  </script>
+</head>
+<body class="{{ bodyClass or '' }}">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  {# Filled in by the Cloudflare Worker from the BANNER_MESSAGE setting. Hidden when there is no message. #}
+  <div id="site-banner" class="site-banner" role="region" aria-label="Important notice" hidden></div>
+
+  {% include "partials/header.njk" %}
+
+  <main id="main" tabindex="-1">
+    {{ content | safe }}
+  </main>
+
+  {% include "partials/footer.njk" %}
+
+  <script src="/lib/bootstrap/js/bootstrap.bundle.min.js?v=5.3.8" defer></script>
+  {%- if pageScripts %}{% for s in pageScripts %}
+  {%- if s.startsWith("/") %}
+  <script src="{{ s }}?v={{ site.assetVersion }}" defer></script>
+  {%- else %}
+  <script src="{{ s }}" async defer></script>
+  {%- endif %}{% endfor %}{% endif %}
+</body>
+</html>

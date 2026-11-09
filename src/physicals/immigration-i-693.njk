@@ -1,0 +1,55 @@
+---
+layout: layouts/page.njk
+title: Immigration Physical (USCIS Form I-693)
+crumb: Immigration (I-693)
+parent: { url: "/physicals/", label: "Physicals" }
+permalink: /physicals/immigration-i-693/
+eyebrow: Immigration physical
+heading: Immigration medical exam (Form I-693)
+lead: "Form I-693, the Report of Immigration Medical Examination and Vaccination Record, is required for most green card applications filed inside the United States. It must be completed by a USCIS-designated civil surgeon."
+description: "USCIS Form I-693 immigration medical exams in Lancaster and Camp Hill, PA, by a USCIS-designated civil surgeon at Glah Medical Group. What to bring and what to expect."
+ctaHeading: Schedule your immigration exam
+---
+<section class="section">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-7 prose">
+        <h2>A designated civil surgeon, at both offices</h2>
+        <p>USCIS only accepts Form I-693 when it is completed and signed by a civil surgeon it has designated. {% if physicals.civilSurgeonName | pending %}Our physician is{% else %}{{ physicals.civilSurgeonName }} is{% endif %} a USCIS-designated civil surgeon, and you can schedule your exam at either our Lancaster or Camp Hill office. You can confirm any civil surgeon's designation with the <a href="{{ links.uscisCivilSurgeons }}" rel="noopener" target="_blank">USCIS civil surgeon locator<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
+
+        <h2>What the exam includes</h2>
+        <p>The exam follows the Technical Instructions for civil surgeons published by the CDC. It shows USCIS that you are not inadmissible on public health grounds. It generally includes:</p>
+        <ul class="check-list">
+          <li>A review of your medical history and a physical examination</li>
+          <li>A review of your vaccination records, and any vaccines you still need</li>
+          <li>Required lab tests, such as a blood test for tuberculosis</li>
+        </ul>
+        <p>Some lab results take a few days, so plan on more than one visit. We will tell you what your exam requires when you schedule.</p>
+
+        <h2>Your sealed envelope</h2>
+        <p>When your exam is complete, we give you the signed Form I-693 in a sealed envelope. Do not open it. USCIS returns forms that are unsealed or altered. You, not our office, are responsible for sending it to USCIS.</p>
+
+        <h2>Timing</h2>
+        <p>USCIS rules on when Form I-693 must be filed and how long the results stay valid have changed several times. Before you schedule, check the current rules on the <a href="{{ links.uscisI693 }}" rel="noopener" target="_blank">USCIS Form I-693 page<span class="visually-hidden"> (opens in a new tab)</span></a>, or ask your immigration attorney, so your exam is not done too early.</p>
+      </div>
+      <div class="col-lg-5">
+        <aside class="values-card mb-4" aria-labelledby="bring-heading">
+          <h2 id="bring-heading" class="h4">What to bring</h2>
+          <ul class="check-list mb-0">
+            <li>A government-issued photo ID, such as your passport</li>
+            <li>Your vaccination records, in English or with a translation</li>
+            <li>A list of the medicines you take</li>
+            <li>Records of any past chest X-rays or tuberculosis treatment</li>
+            <li>Your eyeglasses or contacts, if you wear them</li>
+            <li>Your Form I-693 with Part 1 filled in, but <strong>not signed</strong>. You sign it in front of the civil surgeon.</li>
+          </ul>
+        </aside>
+        <aside class="info-panel" aria-labelledby="price-heading">
+          <h2 id="price-heading" class="h5">Cost</h2>
+          <p class="mb-2">{{ pricing.physicalsNote }}. Fees for any required vaccines or lab tests are explained when you schedule.</p>
+          <p class="mb-0 fine-print">Official information: <a href="{{ links.uscisI693 }}" rel="noopener" target="_blank">uscis.gov/i-693<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>

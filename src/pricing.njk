@@ -1,0 +1,57 @@
+---
+layout: layouts/page.njk
+title: Pricing
+permalink: /pricing/
+eyebrow: Simple, clear pricing
+heading: What it costs
+lead: "No contracts and no expensive packaged foods. For weight loss, you pay per visit. For physicals, call either office for pricing."
+description: "Glah Medical Group pricing: $55 initial weight loss consultation, $30 weekly visits, appetite suppressants $8–$16 per week if prescribed. Call for physical exam pricing."
+---
+<section class="section">
+  <div class="container">
+    <h2 class="text-center mb-4">Weight loss program</h2>
+    <div class="row g-4">
+      {%- for p in pricing.weightLoss %}
+      <div class="col-lg-4">
+        <article class="price-card{% if p.featured %} price-card-featured{% endif %}" aria-labelledby="price-{{ loop.index }}">
+          {%- if p.featured %}<p class="price-flag">Recommended</p>{% endif %}
+          <h3 id="price-{{ loop.index }}">{{ p.name }}</h3>
+          <p class="price">{{ p.price }}{% if p.unit %} <span>{{ p.unit }}</span>{% endif %}</p>
+          <ul class="check-list mb-0">
+            {%- for i in p.items %}<li>{{ i }}</li>{% endfor %}
+          </ul>
+        </article>
+      </div>
+      {%- endfor %}
+    </div>
+    <div class="ins-note ins-note-info mt-4">
+      <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+      <p class="mb-0"><strong>Why weekly?</strong> Weekly visits are recommended for the best results. Our goal is a healthy way of eating that lasts a lifetime, built on food from your own store, not products sold in our office.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint" aria-labelledby="phys-price-heading">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="phys-price-heading">Physical exams</h2>
+      <p class="section-intro">Prices depend on the form and any vaccines or lab tests you need. Call either office and we will give you the price before you book.</p>
+    </div>
+    <div class="row g-4">
+      {%- for p in physicals.list %}
+      <div class="col-md-4">
+        <a class="feature-card" href="{{ p.url }}">
+          <span class="feature-icon"><i class="fa-solid {{ p.icon }}" aria-hidden="true"></i></span>
+          <h3>{{ p.short }}</h3>
+          <p class="price-call">{{ pricing.physicalsNote }}</p>
+        </a>
+      </div>
+      {%- endfor %}
+    </div>
+    <div class="ins-note mt-4" role="note">
+      <i class="fa-solid fa-phone" aria-hidden="true"></i>
+      <p class="mb-0"><strong>Insurance and payment:</strong> please call
+        {%- for o in site.offices %} {{ o.name }} <a href="tel:{{ o.phoneHref }}">{{ o.phone }}</a>{% if not loop.last %} or{% endif %}{% endfor %} to ask about payment options before your first visit.</p>
+    </div>
+  </div>
+</section>

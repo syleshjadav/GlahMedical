@@ -1,0 +1,51 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-3">
+        <p class="footer-brand">{{ site.name }}</p>
+        <p class="footer-text">Physician-based weight loss counseling for over 40 years, plus immigration, driver's license and school physicals, in Lancaster and Camp Hill.</p>
+        <ul class="social list-unstyled d-flex gap-2 mb-0">
+          {%- for s in site.social %}
+          <li><a href="{{ s.url }}" rel="noopener" target="_blank"><i class="fa-brands {{ s.icon }}" aria-hidden="true"></i><span class="visually-hidden">{{ s.name }} (opens in a new tab)</span></a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+      {%- for o in site.offices %}
+      <div class="col-sm-6 col-lg-3">
+        <h2 class="footer-heading">{{ o.name }} office</h2>
+        <address class="footer-text mb-2">
+          {%- if not (o.street | pending) %}{{ o.street }}<br>{% endif %}
+          {{ o.city }}, {{ o.state }}{% if o.zip %} {{ o.zip }}{% endif %}
+        </address>
+        <p class="footer-text mb-2">Phone: <a class="footer-link" href="tel:{{ o.phoneHref }}">{{ o.phone }}</a></p>
+        <a class="footer-link" href="{{ o.mapsUrl }}" rel="noopener" target="_blank">Get directions <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="visually-hidden"> to the {{ o.name }} office (opens Google Maps in a new tab)</span></a>
+      </div>
+      {%- endfor %}
+      <div class="col-sm-6 col-lg-3">
+        <h2 class="footer-heading">Services</h2>
+        <ul class="list-unstyled footer-text footer-list">
+          <li><a href="/weight-loss/">Weight loss</a></li>
+          {%- for p in physicals.list %}
+          <li><a href="{{ p.url }}">{{ p.short }}</a></li>
+          {%- endfor %}
+          <li><a href="/pricing/">Pricing</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-emergency">
+      <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+      <span>If you are having a medical emergency, call 911 or go to the nearest emergency room.</span>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="mb-0">&copy; {{ "" | year }} {{ site.legalName }} &middot; Website by <a href="https://trusscodeweb.com/" rel="noopener" target="_blank">TrussCode<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+      <ul class="list-unstyled d-flex flex-wrap gap-3 mb-0">
+        <li><a href="/privacy/">Privacy Policy</a></li>
+        <li><a href="/notice-of-privacy-practices/">Notice of Privacy Practices</a></li>
+        <li><a href="/accessibility/">Accessibility</a></li>
+        <li><a href="/terms/">Terms &amp; Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>

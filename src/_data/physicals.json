@@ -1,0 +1,30 @@
+{
+  "_comment": "The three physical exams. Each has its own page under /physicals/. civilSurgeonName: the USCIS-designated civil surgeon's name as listed in the USCIS civil surgeon locator (xxxx until the practice confirms; the page reads fine without it).",
+  "civilSurgeonName": "xxxx",
+  "list": [
+    {
+      "id": "immigration-i-693",
+      "url": "/physicals/immigration-i-693/",
+      "name": "Immigration physical (Form I-693)",
+      "short": "Immigration (I-693)",
+      "icon": "fa-passport",
+      "summary": "The USCIS medical exam and vaccination record for green card applicants, completed by a USCIS-designated civil surgeon."
+    },
+    {
+      "id": "drivers-license",
+      "url": "/physicals/drivers-license/",
+      "name": "Driver's license physical (PennDOT DL-180)",
+      "short": "Driver's license (DL-180)",
+      "icon": "fa-id-card",
+      "summary": "The physical exam you need for a Pennsylvania non-commercial learner's permit. We complete the medical part of your DL-180."
+    },
+    {
+      "id": "school",
+      "url": "/physicals/school/",
+      "name": "School physical",
+      "short": "School physical",
+      "icon": "fa-graduation-cap",
+      "summary": "The physical Pennsylvania requires at school entry, 6th grade and 11th grade, on the Department of Health form."
+    }
+  ]
+}

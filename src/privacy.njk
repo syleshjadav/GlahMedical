@@ -1,0 +1,33 @@
+---
+layout: layouts/page.njk
+title: Privacy Policy
+permalink: /privacy/
+eyebrow: Legal
+lead: "How this website collects and uses information. Last updated: November 9, 2026."
+description: "Website privacy policy for Glah Medical Group."
+hideCta: true
+---
+<section class="section">
+  <div class="container narrow prose">
+    <p>This policy explains what information the {{ site.name }} website collects and how it is used. It covers this website only. How we protect your health information as a patient is described in our <a href="/notice-of-privacy-practices/">Notice of Privacy Practices</a>.</p>
+
+    <h2>Information you give us</h2>
+    <p>If you use the appointment request form, we collect your name, phone number, optional email address, preferred office, the service you want to schedule, the best time to call and any note you add. We use it only to contact you about scheduling. The form is sent to our office by email through our email provider, Resend. Please do not include medical details in the form.</p>
+    <p>We do not sell this information or use it for advertising.</p>
+
+    <h2>Information collected automatically</h2>
+    <p>Our website host, Cloudflare, processes basic technical information such as your IP address and browser type to deliver pages, protect the site from abuse and keep security logs. The request form uses Cloudflare Turnstile to tell people from bots, which processes similar technical information. This website does not use advertising or tracking cookies.</p>
+
+    <h2>Links to other websites</h2>
+    <p>Links such as "Get directions" and links to USCIS, PennDOT and the Pennsylvania Department of Health open other websites, which have their own privacy policies.</p>
+
+    <h2>Children</h2>
+    <p>This website is not directed to children under 13. Parents or guardians should request appointments for children.</p>
+
+    <h2>Changes</h2>
+    <p>We may update this policy. The date at the top of the page shows when it last changed.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy? Email <a href="mailto:{{ site.email }}">{{ site.email }}</a> or call {% for o in site.offices %}{{ o.name }} <a href="tel:{{ o.phoneHref }}">{{ o.phone }}</a>{% if not loop.last %} or {% endif %}{% endfor %}.</p>
+  </div>
+</section>

@@ -1,0 +1,29 @@
+---
+permalink: /maintenance.html
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Website maintenance | {{ site.name }}</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css?v=5.3.8">
+  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css?v=7.3.1">
+  <link rel="stylesheet" href="/assets/css/site.css?v={{ site.assetVersion }}">
+</head>
+<body class="maintenance-page">
+  <main id="main" class="maintenance-card">
+    <p class="brand brand-center mb-4"><img src="/assets/img/logo-mark.svg" width="56" height="56" alt=""><span class="brand-text"><span class="brand-name">{{ site.name }}</span></span></p>
+    <h1>We'll be right back</h1>
+    {# The Worker replaces this text with MAINTENANCE_MESSAGE when it is set. #}
+    <p id="maintenance-message" class="lead">Our website is being updated and will be back shortly.</p>
+    <p>Our offices are open as usual. To schedule or ask a question, call:</p>
+    {%- for o in site.offices %}
+    <p class="mb-2">{{ o.name }}<br><a class="maintenance-phone" href="tel:{{ o.phoneHref }}"><i class="fa-solid fa-phone" aria-hidden="true"></i> {{ o.phone }}</a></p>
+    {%- endfor %}
+  </main>
+</body>
+</html>

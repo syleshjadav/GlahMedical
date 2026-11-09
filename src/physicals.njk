@@ -1,0 +1,65 @@
+---
+layout: layouts/page.njk
+title: Physical Exams
+crumb: Physicals
+permalink: /physicals/
+eyebrow: Physical exams
+heading: Immigration, driver's license and school physicals
+lead: "Both of our offices complete the three physical exams people ask us for most. Each one uses a specific government or school form, so we make sure yours is filled out completely."
+description: "Physical exams at Glah Medical Group in Lancaster and Camp Hill, PA: USCIS Form I-693 immigration medicals by a designated civil surgeon, PennDOT DL-180 learner's permit physicals and Pennsylvania school physicals."
+ctaHeading: Schedule your physical
+---
+<section class="section">
+  <div class="container">
+    <div class="row g-4">
+      {%- for p in physicals.list %}
+      <div class="col-lg-4">
+        <article class="physical-card">
+          <span class="feature-icon"><i class="fa-solid {{ p.icon }}" aria-hidden="true"></i></span>
+          <h2>{{ p.name }}</h2>
+          <p>{{ p.summary }}</p>
+          <p class="physical-meta"><i class="fa-solid fa-tag" aria-hidden="true"></i> {{ pricing.physicalsNote }} &middot; Both offices</p>
+          <a class="btn btn-primary" href="{{ p.url }}">Details and what to bring<span class="visually-hidden">: {{ p.name }}</span></a>
+        </article>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint" aria-labelledby="compare-heading">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="compare-heading">Which form do you need?</h2>
+    </div>
+    <div class="table-responsive compare-wrap">
+      <table class="table compare-table mb-0">
+        <caption class="visually-hidden">Comparison of the three physical exams</caption>
+        <thead>
+          <tr><th scope="col">Physical</th><th scope="col">Who asks for it</th><th scope="col">Form</th><th scope="col">Bring</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><a href="/physicals/immigration-i-693/">Immigration</a></th>
+            <td>USCIS, for most green card (adjustment of status) applications</td>
+            <td>Form I-693, completed by a designated civil surgeon</td>
+            <td>Photo ID, vaccination records, medicine list</td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="/physicals/drivers-license/">Driver's license</a></th>
+            <td>PennDOT, for a non-commercial learner's permit</td>
+            <td>DL-180</td>
+            <td>DL-180, photo ID, glasses or contacts</td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="/physicals/school/">School</a></th>
+            <td>Pennsylvania schools, at entry, 6th grade and 11th grade</td>
+            <td>PA Department of Health Physical Examination Form, or your school's form</td>
+            <td>The form, immunization records, glasses</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fine-print mt-3 mb-0">We do not do commercial driver (CDL/DOT) medical exams. Those need a provider listed on the federal registry of certified medical examiners.</p>
+  </div>
+</section>

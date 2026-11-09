@@ -1,6 +1,8 @@
-# Copy to .dev.vars for local testing with `npx wrangler pages dev .`  (.dev.vars is git-ignored)
-# The Turnstile secret below is Cloudflare's always-pass TEST secret. Use real values only in the Cloudflare dashboard.
+# Copy to .dev.vars for local testing (`npm run preview`). .dev.vars is git-ignored.
+# The Turnstile secret below is Cloudflare's always-pass TEST secret.
+# Real values go in Cloudflare with `npx wrangler secret put NAME`, never in this repo.
+MAINTENANCE_BYPASS_KEY=local-preview
 TURNSTILE_SECRET_KEY=1x0000000000000000000000000000000AA
-RESEND_API_KEY=re_PLACEHOLDER_put_real_key_in_dashboard_secret
-MAIL_TO=glahmedicalgroup@yahoo.com
-MAIL_FROM=Glah Website <appointments@glahmedicalgroup.com>
+RESEND_API_KEY=re_PLACEHOLDER_put_real_key_in_cloudflare_secret
+# Use Cloudflare's always-pass TEST site key locally (the live key only works on the real hostnames):
+TURNSTILE_SITE_KEY=1x00000000000000000000AA

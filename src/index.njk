@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 isHome: true
 bodyClass: home
-description: "Glah Medical Group: physician-guided weight loss for over 40 years, plus immigration (I-693), driver's license (DL-180) and school physicals. Offices in Lancaster and Camp Hill, PA."
+description: "Glah Medical Group: physician-guided weight loss and GLP-1 medication, plus immigration (I-693), citizenship disability exception (N-648), driver's license and school physicals. Offices in Lancaster and Camp Hill, PA."
 ---
 <section class="hero">
   <div class="container">
@@ -10,10 +10,10 @@ description: "Glah Medical Group: physician-guided weight loss for over 40 years
       <div class="col-lg-7">
         <p class="eyebrow">Lancaster &amp; Camp Hill, PA &middot; {{ site.yearsInPractice }} years of care</p>
         <h1 class="hero-title">Take the first step to <em>feeling good</em>.</h1>
-        <p class="lead">Physician-based weight loss counseling that fits real life, with one personal eating plan built on food from your own grocery store. We also do immigration, driver's license and school physicals at both offices.</p>
+        <p class="lead">Physician-based weight loss counseling that fits real life, with one personal eating plan built on food from your own grocery store, and now GLP-1 medication when it is right for you. We also do immigration, driver's license and school physicals.</p>
         <div class="hero-actions">
           <a class="btn btn-primary btn-lg" href="/contact/#request">Request an appointment</a>
-          <a class="btn btn-outline-primary btn-lg" href="/weight-loss/">How weight loss works</a>
+          <a class="btn btn-outline-primary btn-lg" href="/weight-loss/glp-1/">GLP-1 medication</a>
         </div>
         <ul class="hero-facts list-unstyled">
           {%- for o in site.offices %}
@@ -55,18 +55,25 @@ description: "Glah Medical Group: physician-guided weight loss for over 40 years
     <div class="section-head">
       <p class="eyebrow">Our services</p>
       <h2 id="services-heading">Weight loss care and the physicals you need</h2>
-      <p class="section-intro">Every service is available at both offices. Call either one, or send a request.</p>
+      <p class="section-intro">Call either office, or send a request.</p>
     </div>
     <div class="row g-4">
-      <div class="col-md-6 col-lg-3">
+      <div class="col-md-6 col-lg-4">
         <a class="feature-card" href="/weight-loss/">
           <span class="feature-icon feature-icon-coral"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></span>
           <h3>Physician-guided weight loss</h3>
           <p>A personal eating plan and weekly one-on-one visits to help you lose the weight and keep it off.</p>
         </a>
       </div>
+      <div class="col-md-6 col-lg-4">
+        <a class="feature-card" href="/weight-loss/glp-1/">
+          <span class="feature-icon feature-icon-coral"><i class="fa-solid fa-syringe" aria-hidden="true"></i></span>
+          <h3>GLP-1 weight loss medication</h3>
+          <p>Physician-prescribed GLP-1 medicine when it is right for you, paired with an eating plan that helps you keep the weight off.</p>
+        </a>
+      </div>
       {%- for p in physicals.list %}
-      <div class="col-md-6 col-lg-3">
+      <div class="col-md-6 col-lg-4">
         <a class="feature-card" href="{{ p.url }}">
           <span class="feature-icon"><i class="fa-solid {{ p.icon }}" aria-hidden="true"></i></span>
           <h3>{{ p.name }}</h3>
@@ -74,6 +81,23 @@ description: "Glah Medical Group: physician-guided weight loss for over 40 years
         </a>
       </div>
       {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section pt-0" aria-labelledby="glp1-heading">
+  <div class="container">
+    <div class="glp1-band">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-8">
+          <p class="eyebrow">Now offering</p>
+          <h2 id="glp1-heading">GLP-1 medication, with a doctor and a plan behind it</h2>
+          <p class="mb-0">Compounded semaglutide and tirzepatide, each with vitamin B‑12, prescribed after a physician evaluation and paired with the eating plan we have refined for more than 40 years. We also work with insurance companies to try to get it covered.</p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a class="btn btn-primary btn-lg" href="/weight-loss/glp-1/">Learn about GLP-1</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -137,7 +161,7 @@ description: "Glah Medical Group: physician-guided weight loss for over 40 years
       <div class="col-lg-5">
         <p class="eyebrow">Physical exams</p>
         <h2 id="physicals-heading">Forms filled out right the first time</h2>
-        <p>Whether it is for a green card, a learner's permit or school, we know which form you need and what the agency or school expects to see on it. Bring the form, your ID and your records, and we take care of the rest.</p>
+        <p>Whether it is for a green card, citizenship, a learner's permit or school, we know which form you need and what the agency or school expects to see on it. Bring the form, your ID and your records, and we take care of the rest.</p>
         <a class="btn btn-outline-primary mt-2" href="/physicals/">Compare our physicals</a>
       </div>
       <div class="col-lg-7">
@@ -146,7 +170,7 @@ description: "Glah Medical Group: physician-guided weight loss for over 40 years
           <li><a href="{{ p.url }}"><i class="fa-solid {{ p.icon }}" aria-hidden="true"></i><span>{{ p.name }}</span></a></li>
           {%- endfor %}
         </ul>
-        <p class="fine-print mt-3 mb-0">Physicals: {{ pricing.physicalsNote | lower }} at either office.</p>
+        <p class="fine-print mt-3 mb-0">Physicals: {{ pricing.physicalsNote | lower }}. {{ pricing.payment }}</p>
       </div>
     </div>
   </div>

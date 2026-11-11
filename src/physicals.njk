@@ -4,21 +4,21 @@ title: Physical Exams
 crumb: Physicals
 permalink: /physicals/
 eyebrow: Physical exams
-heading: Immigration, driver's license and school physicals
-lead: "Both of our offices complete the three physical exams people ask us for most. Each one uses a specific government or school form, so we make sure yours is filled out completely."
-description: "Physical exams at Glah Medical Group in Lancaster and Camp Hill, PA: USCIS Form I-693 immigration medicals by a designated civil surgeon, PennDOT DL-180 learner's permit physicals and Pennsylvania school physicals."
+heading: Physicals and immigration medical forms
+lead: "Immigration physicals, citizenship disability exceptions, driver's license and school physicals. Each one uses a specific government or school form, so we make sure yours is filled out completely."
+description: "Physical exams at Glah Medical Group in Lancaster and Camp Hill, PA: USCIS Form I-693 immigration medicals by a designated civil surgeon, Form N-648 disability exceptions, PennDOT DL-180 learner's permit physicals and Pennsylvania school physicals."
 ctaHeading: Schedule your physical
 ---
 <section class="section">
   <div class="container">
     <div class="row g-4">
       {%- for p in physicals.list %}
-      <div class="col-lg-4">
+      <div class="col-md-6 col-xl-3">
         <article class="physical-card">
           <span class="feature-icon"><i class="fa-solid {{ p.icon }}" aria-hidden="true"></i></span>
           <h2>{{ p.name }}</h2>
           <p>{{ p.summary }}</p>
-          <p class="physical-meta"><i class="fa-solid fa-tag" aria-hidden="true"></i> {{ pricing.physicalsNote }} &middot; Both offices</p>
+          <p class="physical-meta"><i class="fa-solid fa-tag" aria-hidden="true"></i> {{ pricing.physicalsNote }}</p>
           <a class="btn btn-primary" href="{{ p.url }}">Details and what to bring<span class="visually-hidden">: {{ p.name }}</span></a>
         </article>
       </div>
@@ -34,7 +34,7 @@ ctaHeading: Schedule your physical
     </div>
     <div class="table-responsive compare-wrap">
       <table class="table compare-table mb-0">
-        <caption class="visually-hidden">Comparison of the three physical exams</caption>
+        <caption class="visually-hidden">Comparison of our physicals and medical forms</caption>
         <thead>
           <tr><th scope="col">Physical</th><th scope="col">Who asks for it</th><th scope="col">Form</th><th scope="col">Bring</th></tr>
         </thead>
@@ -43,7 +43,13 @@ ctaHeading: Schedule your physical
             <th scope="row"><a href="/physicals/immigration-i-693/">Immigration</a></th>
             <td>USCIS, for most green card (adjustment of status) applications</td>
             <td>Form I-693, completed by a designated civil surgeon</td>
-            <td>Photo ID, vaccination records, medicine list</td>
+            <td>Photo ID, vaccination record, printed I-693, Personal Data Sheet</td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="/physicals/disability-exception-n-648/">Disability exception</a></th>
+            <td>USCIS, to excuse the English and civics tests for citizenship</td>
+            <td>Form N-648</td>
+            <td>Interpreter, photo ID, medicines, medical records and test results</td>
           </tr>
           <tr>
             <th scope="row"><a href="/physicals/drivers-license/">Driver's license</a></th>

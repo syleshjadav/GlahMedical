@@ -1,0 +1,64 @@
+---
+layout: layouts/page.njk
+title: Disability Exception for Citizenship (USCIS Form N-648)
+crumb: Disability exception (N-648)
+parent: { url: "/physicals/", label: "Physicals" }
+permalink: /physicals/disability-exception-n-648/
+eyebrow: Citizenship medical form
+heading: Disability exception consultation (Form N-648)
+lead: "If a physical or developmental disability or a mental impairment keeps you from learning or showing knowledge of English or U.S. civics, you may qualify for an exception to those parts of the naturalization test. USCIS Form N-648 is the medical certification for that exception."
+description: "USCIS Form N-648 disability exception consultations at Glah Medical Group, Camp Hill and Lancaster, PA. What records to bring, how the consultation works and what it costs."
+ctaHeading: Schedule your N-648 consultation
+---
+{%- set ch = site.offices | byId("camp-hill") %}
+<section class="section">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-7 prose">
+        <h2>How the consultation works</h2>
+        <p>{{ physicals.civilSurgeonName if not (physicals.civilSurgeonName | pending) else "Our physician" }} meets with you and carefully reviews all of your medical records, lab results and any MRI or CT results. Then the doctor decides whether you qualify for the disability exception. If you qualify, we complete your Form N-648.</p>
+        <p>The decision depends on your medical records, so <strong>the records you bring matter most.</strong> Form N-648 must be supported by documented diagnoses.</p>
+
+        <h2>Get your medical records before your visit</h2>
+        <p>Ask your primary care doctor or specialist to send your records to our office <strong>before your appointment</strong>. You are responsible for getting these records to us. We need:</p>
+        <ul class="check-list">
+          <li>Notes from your last appointment, including all prior diagnoses</li>
+          <li>Lab results</li>
+          <li>MRI and CT scan results, and other related tests, if you have had them</li>
+        </ul>
+        <div class="ins-note ins-note-info mt-3">
+          <i class="fa-solid fa-fax" aria-hidden="true"></i>
+          <p class="mb-0">Your doctor can fax records to <strong>{{ ch.fax }}</strong> or email them to <a href="mailto:{{ ch.email }}">{{ ch.email }}</a>.</p>
+        </div>
+
+        <h2 class="mt-5">About Form N-648</h2>
+        <p>USCIS decides whether to accept the exception. Read the official instructions on the <a href="{{ links.uscisN648 }}" rel="noopener" target="_blank">USCIS Form N-648 page<span class="visually-hidden"> (opens in a new tab)</span></a>, or ask your immigration attorney, if you are not sure the exception applies to you.</p>
+      </div>
+      <div class="col-lg-5">
+        <aside class="values-card mb-4" aria-labelledby="bring-heading">
+          <h2 id="bring-heading" class="h4">What to bring</h2>
+          <ul class="check-list mb-0">
+            <li>An <strong>interpreter</strong>, with their own government-issued photo ID</li>
+            <li>Your <strong>government-issued photo ID</strong>, such as a valid passport or driver's license. Age 14 or younger: ID showing your name, date and place of birth and a parent's full name.</li>
+            <li>Your <strong>medicines</strong>: the bottles, or a complete list</li>
+            <li><strong>Office visit notes</strong> from your last doctor appointment, with all prior diagnoses</li>
+            <li>Any <strong>CT, MRI or other test results</strong>. You must provide these so the doctor can support the form.</li>
+            <li><strong>Payment:</strong> cash or credit card</li>
+          </ul>
+        </aside>
+        <aside class="info-panel" aria-labelledby="price-heading">
+          <h2 id="price-heading" class="h5">Cost</h2>
+          {%- if pricing.showPhysicalPrices %}
+          <dl class="hours mb-2">
+            <div><dt>You qualify (consultation and paperwork)</dt><dd>{{ pricing.n648.qualify }}</dd></div>
+            <div><dt>You do not qualify (consultation only)</dt><dd>{{ pricing.n648.notQualify }}</dd></div>
+          </dl>
+          {%- else %}
+          <p class="mb-2">{{ pricing.physicalsNote }}. The fee is lower if you do not qualify.</p>
+          {%- endif %}
+          <p class="mb-0">{{ pricing.payment }}</p>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,9 @@
+{
+  "_comment": "GLP-1 page details from the practice (Nov 2026). Values marked xxxx are hidden on the site until filled in. Brand names are trademarks of their owners; keep the compounded-medication disclosure on the page.",
+  "medications": [
+    { "name": "Semaglutide with vitamin B‑12", "note": "Semaglutide is the active ingredient found in Wegovy®." },
+    { "name": "Tirzepatide with vitamin B‑12", "note": "Tirzepatide is the active ingredient found in Zepbound®." }
+  ],
+  "insurance": "We also work with insurance companies to try to get your medication covered.",
+  "howItWorksAtGlah": "xxxx"
+}

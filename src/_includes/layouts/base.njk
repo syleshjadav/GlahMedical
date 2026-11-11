@@ -8,7 +8,7 @@
   <meta name="description" content="{{ description or site.tagline }}">
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
   {%- if noindex %}<meta name="robots" content="noindex">{% endif %}
-  <meta name="theme-color" content="#16302b">
+  <meta name="theme-color" content="#12294a">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="{{ site.name }}">
@@ -44,6 +44,12 @@
         "@type": "MedicalClinic",
         "name": {{ (site.name + " – " + o.name) | json | safe }},
         "telephone": {{ o.phone | json | safe }},
+        {%- if o.fax %}
+        "faxNumber": {{ o.fax | json | safe }},
+        {%- endif %}
+        {%- if o.email %}
+        "email": {{ o.email | json | safe }},
+        {%- endif %}
         "address": {
           "@type": "PostalAddress",
           {%- if not (o.street | pending) %}

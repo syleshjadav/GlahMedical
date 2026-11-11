@@ -6,7 +6,7 @@ permalink: /faq/
 eyebrow: Questions
 heading: Frequently asked questions
 lead: "Answers to the questions we hear most. Don't see yours? Call either office."
-description: "Answers to common questions about weight loss visits, appetite suppressants, pricing and immigration, driver's license and school physicals at Glah Medical Group."
+description: "Answers to common questions about weight loss visits, GLP-1 medication, appetite suppressants, pricing, immigration (I-693) and N-648 exams, and driver's license and school physicals at Glah Medical Group."
 ---
 <section class="section">
   <div class="container narrow">
@@ -16,14 +16,19 @@ description: "Answers to common questions about weight loss visits, appetite sup
       <details><summary>How often will I need to come in?</summary><p>We recommend weekly visits for the best results. Each visit is quick and includes a weight and blood pressure check and a review of your food diary.</p></details>
       <details><summary>Are appetite suppressants required?</summary><p>No. They are only prescribed when a physician decides they are right for you. If prescribed, a one-week supply is $8 to $16.</p></details>
       <details><summary>What happens at my first appointment?</summary><p>We take your weight, blood pressure and measurements, talk about how you eat now, and go over a personal eating plan with you. The initial consultation is $65, and follow-up office visits are $40.</p></details>
+      <details><summary>Do you offer GLP-1 weight loss medication?</summary><p>Yes. We offer compounded semaglutide and compounded tirzepatide, each with vitamin B‑12. A physician first reviews your health history to decide whether one is right for you. If it is, it comes with your eating plan and regular check-ins. <a href="/weight-loss/glp-1/">Learn more about GLP-1</a>.</p></details>
+      <details><summary>Will insurance cover my GLP-1?</summary><p>It depends on your plan. {{ glp1.insurance }}</p></details>
       <details><summary>Can this help with conditions like diabetes or high blood pressure?</summary><p>Many patients see better blood sugar, blood pressure and cholesterol numbers as they lose weight. Only your own physician should change your medicines.</p></details>
     </div>
 
     <h2 class="mt-5 mb-4">Physicals</h2>
     <div class="faq">
-      <details><summary>Which physicals do you offer?</summary><p>Immigration medical exams on USCIS Form I-693, driver's license physicals on PennDOT form DL-180 for a non-commercial learner's permit, and Pennsylvania school physicals. All three are available at both offices. <a href="/physicals/">Compare them</a>.</p></details>
-      <details><summary>How much does a physical cost?</summary><p>Please call either office for pricing. The cost depends on the form and on any vaccines or lab tests you need.</p></details>
-      <details><summary>Can you complete my Form I-693?</summary><p>Yes. Form I-693 must be completed by a USCIS-designated civil surgeon, and our physician is designated. See <a href="/physicals/immigration-i-693/">what to bring and what to expect</a>.</p></details>
+      <details><summary>Which physicals do you offer?</summary><p>Immigration medical exams on USCIS Form I-693, disability exception consultations for citizenship on USCIS Form N-648, driver's license physicals on PennDOT form DL-180 for a non-commercial learner's permit, and Pennsylvania school physicals. <a href="/physicals/">Compare them</a>.</p></details>
+      <details><summary>How much does a physical cost?</summary><p>Please call either office for pricing. The cost depends on the form and on any lab tests you need. {{ pricing.payment }}</p></details>
+      <details><summary>Can you complete my Form I-693?</summary><p>Yes. Form I-693 must be completed by a USCIS-designated civil surgeon, and {{ physicals.civilSurgeonName }} is designated. See <a href="/physicals/immigration-i-693/">what to bring and how to fill out the form</a>.</p></details>
+      <details><summary>Where do I get my blood tests for the immigration exam?</summary><p>After your exam, the doctor gives you a lab order to take to any Quest Diagnostics location. You already paid for the tests at our office, so do not pay or give insurance information at the lab. Results come back to us in 4 to 6 days.</p></details>
+      <details><summary>Can you give me my vaccines for the I-693?</summary><p>The doctor can give you a prescription for any vaccine you still need. You can get vaccines free at your county health department if you have no health insurance, or at a pharmacy or your own doctor's office. Then email us a photo of your vaccination record. <a href="/physicals/immigration-i-693/#vaccines">See the vaccine list</a>.</p></details>
+      <details><summary>Can you help with a disability exception for the citizenship test?</summary><p>Yes. The doctor reviews your medical records and decides whether you qualify for an exception on USCIS Form N-648. Bring an interpreter and your medical records. <a href="/physicals/disability-exception-n-648/">See what to bring</a>.</p></details>
       <details><summary>Do you do CDL or DOT physicals?</summary><p>No. Commercial driver medical exams must be done by a certified medical examiner on the federal registry. We do the physical for a regular (non-commercial) learner's permit.</p></details>
       <details><summary>Do you do sports physicals?</summary><p>Tell us when you call if your student needs a PIAA sports form as well as a school physical.</p></details>
     </div>
@@ -31,7 +36,7 @@ description: "Answers to common questions about weight loss visits, appetite sup
     <h2 class="mt-5 mb-4">Appointments and payment</h2>
     <div class="faq">
       <details><summary>How do I make an appointment?</summary><p>Call the office nearest you, or <a href="/contact/#request">send a request</a> and we will call you back.</p></details>
-      <details><summary>Do you accept insurance?</summary><p>Please call either office to ask about payment options before your first visit.</p></details>
+      <details><summary>Do you accept insurance?</summary><p>{{ pricing.payment }} For weight loss and GLP-1 visits, please call either office to ask about payment options before your first visit.</p></details>
       <details><summary>Is this an urgent care or emergency clinic?</summary><p>No. We see patients by appointment. If you are having a medical emergency, call 911 or go to the nearest emergency room.</p></details>
     </div>
   </div>

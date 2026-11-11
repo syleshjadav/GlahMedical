@@ -6,5 +6,9 @@
   "pennDotDL180": "https://www.dot.state.pa.us/public/dvspubsforms/bdl/bdl%20form/dl-180.pdf",
   "paSchoolPhysicals": "https://www.pa.gov/agencies/health/programs/school-health/physical-exams",
   "paSchoolFormEn": "https://www.pa.gov/content/dam/copapwp-pagov/en/health/documents/topics/documents/school-health/PHYSICAL%20EXAM%20form%202012.pdf",
-  "paSchoolFormEs": "https://www.pa.gov/content/dam/copapwp-pagov/en/health/documents/topics/documents/school-health/2012%20Physical%20exam%20form%20Spanish.pdf"
+  "paSchoolFormEs": "https://www.pa.gov/content/dam/copapwp-pagov/en/health/documents/topics/documents/school-health/2012%20Physical%20exam%20form%20Spanish.pdf",
+  "uscisI693Pdf": "https://www.uscis.gov/sites/default/files/document/forms/i-693.pdf",
+  "uscisN648": "https://www.uscis.gov/n-648",
+  "questAppointment": "https://appointment.questdiagnostics.com/",
+  "questPhone": "888-277-8772"
 }

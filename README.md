@@ -1,6 +1,6 @@
 # Glah Medical Group Website
 
-Public website for **Glah Medical Group**: physician-guided weight loss, plus immigration (USCIS Form I-693), driver's license (PennDOT DL-180) and school physicals. There are two offices, in Lancaster (2207 Columbia Ave, 717-397-7718) and Camp Hill (717-737-8400).
+Public website for **Glah Medical Group**: physician-guided weight loss and GLP-1 medication, plus immigration (USCIS Form I-693), citizenship disability exception (USCIS Form N-648), driver's license (PennDOT DL-180) and school physicals. There are two offices, in Lancaster (2207 Columbia Ave, 17603, 717-397-7718) and Camp Hill (797 Poplar Church Rd, 17011, 717-737-8400).
 
 - **Static site** built with [Eleventy](https://www.11ty.dev/) 3.1.7 (HTML templates + JSON data files). It follows the same structure and conventions as the APMWC site.
 - **Hosted on Cloudflare** (Workers with static assets). There is **no database and no server to maintain**.
@@ -97,8 +97,10 @@ libman restore
 | `wrangler.jsonc` | `vars.MAIL_TO` | Office inbox(es); currently `glahmedicalgroup@yahoo.com` |
 | `wrangler.jsonc` | `vars.MAIL_FROM` | Sender on the Resend-verified domain (**not** yahoo.com) |
 | Worker secrets | `TURNSTILE_SECRET_KEY`, `RESEND_API_KEY`, `MAINTENANCE_BYPASS_KEY` | Step 4.5 |
-| `src/_data/site.json` | Camp Hill `street`, both offices' `zip`, `hours`, `hoursSchema` | **From the practice** (see below) |
-| `src/_data/physicals.json` | `civilSurgeonName` | Optional: the designated physician's name |
+| `src/_data/site.json` | Each office's address, phone, fax, email, directions, `hours`, `hoursSchema` | Filled in (Nov 2026) |
+| `src/_data/physicals.json` | `civilSurgeonName` | Dr. Haldipur |
+| `src/_data/pricing.json` | `showPhysicalPrices` | `false` = "Call for pricing"; `true` publishes the immigration (by age) and N-648 prices stored in the same file |
+| `src/_data/glp1.json` | `medications`, `howItWorksAtGlah` | **From the practice.** Hidden until filled in |
 
 Secrets are never put in `wrangler.jsonc` or committed. They go in with `wrangler secret put`, or in `.dev.vars` for local use.
 
@@ -120,7 +122,8 @@ While maintenance is on, staff can still view the real site by visiting `https:/
 | To change | Edit |
 | --- | --- |
 | Phones, addresses, hours, email, social links | `src/_data/site.json` |
-| Weight loss prices; "Call for pricing" text for physicals | `src/_data/pricing.json` |
+| Weight loss prices; physical/N-648 prices and the show/hide switch; payment line | `src/_data/pricing.json` |
+| GLP-1 page details | `src/_data/glp1.json` |
 | Physical exam names, summaries, civil surgeon name | `src/_data/physicals.json` |
 | Official USCIS / PennDOT / PA Health links | `src/_data/links.json` (check once a year) |
 | Form "What would you like to schedule?" choices | `src/_data/contactServices.json` **and** `SERVICES` in `worker/contact.js` (keep both in sync) |
@@ -132,9 +135,9 @@ Push to GitHub and Cloudflare redeploys in about a minute. Worker errors, includ
 ## 8. Built vs. still to do
 
 **Fully built**
-- 17 pages:
-  - Home, Weight Loss, Physicals overview
-  - Immigration (I-693), Driver's License (DL-180) and School physical pages
+- 19 pages:
+  - Home, Weight Loss, GLP-1 medication, Physicals overview
+  - Immigration (I-693), Disability exception (N-648), Driver's License (DL-180) and School physical pages
   - Pricing, FAQ, Locations & Contact (with request form)
   - Request sent / not sent pages
   - Privacy Policy, Notice of Privacy Practices, Accessibility, Terms & Disclaimer
@@ -156,10 +159,13 @@ Push to GitHub and Cloudflare redeploys in about a minute. Worker errors, includ
   - reduced-motion support
 
 **Waiting on the practice (shown as `xxxx` on the site, or noted here)**
-- **Camp Hill street address.** The site shows an `xxxx` note on the office card. Add the ZIP codes for both offices too.
-- **Office hours** for each office. The site says "Please call for current hours" until they are added.
-- **Civil surgeon confirmation.** The I-693 page says the practice's physician is a USCIS-designated civil surgeon (as you confirmed). Check the name appears in the USCIS civil surgeon locator for **both** office addresses, since designation is tied to the practice location. Optionally add the name in `physicals.json`.
-- **Physical exam prices:** intentionally "Call for pricing", at the practice's request.
+- **GLP-1 details:** which medicines, how the program runs, pricing. The GLP-1 page is live with general copy; fill in `glp1.json` and `pricing.json` → `glp1` from the practice's GLP-1 emails.
+- **Flyer and after-appointment sheet:** update the printed materials to match the site, which uses the hours and address the practice confirmed (Nov 2026). The flyer shows 789 Poplar Church Rd and glahmedicalgroup.net (should be 797 and .com). The after-appointment sheet shows older hours.
+- **N-648:** the practice is confirming that "disability exemption" means USCIS Form N-648.
+- **Civil surgeon confirmation.** Check Dr. Haldipur appears in the USCIS civil surgeon locator for **both** office addresses, since designation is tied to the practice location.
+- **Physical exam prices:** "Call for pricing" by default. The prices are stored; set `showPhysicalPrices` to `true` to publish them.
+- **Personal Data Sheet:** emailed to patients today. It could be posted as a downloadable PDF on the I-693 page.
+- **Spanish:** the after-appointment instructions exist in Spanish; the site is English only.
 - **Notice of Privacy Practices review.** This is a generic HIPAA notice adapted from the APMWC site. The practice must review it and confirm the Privacy Officer contact and effective date. It should match the paper copy at the front desk.
 - The two patient result stories and the weight loss copy were carried over from the old site. Confirm the practice still has the patients' permission to publish them.
 

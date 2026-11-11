@@ -2,8 +2,8 @@
   <div class="container">
     <div class="row g-5">
       <div class="col-lg-3">
-        <p class="footer-brand">{{ site.name }}</p>
-        <p class="footer-text">Physician-based weight loss counseling for over 40 years, plus immigration, driver's license and school physicals, in Lancaster and Camp Hill.</p>
+        <p class="footer-brand"><img src="/assets/img/logo-white.svg?v={{ site.assetVersion }}" width="208" height="64" alt="{{ site.name }}"></p>
+        <p class="footer-text">Physician-based weight loss counseling for over 40 years, GLP-1 medication, and immigration, driver's license and school physicals, in Lancaster and Camp Hill.</p>
         <ul class="social list-unstyled d-flex gap-2 mb-0">
           {%- for s in site.social %}
           <li><a href="{{ s.url }}" rel="noopener" target="_blank"><i class="fa-brands {{ s.icon }}" aria-hidden="true"></i><span class="visually-hidden">{{ s.name }} (opens in a new tab)</span></a></li>
@@ -17,7 +17,7 @@
           {%- if not (o.street | pending) %}{{ o.street }}<br>{% endif %}
           {{ o.city }}, {{ o.state }}{% if o.zip %} {{ o.zip }}{% endif %}
         </address>
-        <p class="footer-text mb-2">Phone: <a class="footer-link" href="tel:{{ o.phoneHref }}">{{ o.phone }}</a></p>
+        <p class="footer-text mb-2">Phone: <a class="footer-link" href="tel:{{ o.phoneHref }}">{{ o.phone }}</a>{% if o.fax %}<br>Fax: {{ o.fax }}{% endif %}</p>
         <a class="footer-link" href="{{ o.mapsUrl }}" rel="noopener" target="_blank">Get directions <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="visually-hidden"> to the {{ o.name }} office (opens Google Maps in a new tab)</span></a>
       </div>
       {%- endfor %}
@@ -25,6 +25,7 @@
         <h2 class="footer-heading">Services</h2>
         <ul class="list-unstyled footer-text footer-list">
           <li><a href="/weight-loss/">Weight loss</a></li>
+          <li><a href="/weight-loss/glp-1/">GLP-1 medication</a></li>
           {%- for p in physicals.list %}
           <li><a href="{{ p.url }}">{{ p.short }}</a></li>
           {%- endfor %}

@@ -1,12 +1,69 @@
 {
-  "_comment": "Prices shown on the Pricing page. Physicals intentionally show 'Call for pricing' (practice request).",
+  "_comment": "Prices shown on the site. showPhysicalPrices: false shows 'Call for pricing' everywhere for physicals and N-648 (the original practice request). Set it to true to publish the immigration and N-648 prices below.",
   "weightLoss": [
-    { "name": "Initial consultation", "price": "$65", "unit": "", "featured": false,
-      "items": ["Weight, blood pressure and measurements", "A look at how you eat now", "Your personalized eating plan"] },
-    { "name": "Follow-up office visits", "price": "$40", "unit": "per visit", "featured": true,
-      "items": ["Weight and blood pressure check", "Food diary review and plan adjustments", "New nutrition reading and recipes each week"] },
-    { "name": "Appetite suppressants", "price": "$8–$16", "unit": "per week", "featured": false,
-      "items": ["Only if a physician decides they are right for you", "Prescribed by a physician", "One-week supply"] }
+    {
+      "name": "Initial consultation",
+      "price": "$65",
+      "unit": "",
+      "featured": false,
+      "items": [
+        "Weight, blood pressure and measurements",
+        "A look at how you eat now",
+        "Your personalized eating plan"
+      ]
+    },
+    {
+      "name": "Follow-up office visits",
+      "price": "$40",
+      "unit": "per visit",
+      "featured": true,
+      "items": [
+        "Weight and blood pressure check",
+        "Food diary review and plan adjustments",
+        "New nutrition reading and recipes each week"
+      ]
+    },
+    {
+      "name": "Appetite suppressants",
+      "price": "$8–$16",
+      "unit": "per week",
+      "featured": false,
+      "items": [
+        "Only if a physician decides they are right for you",
+        "Prescribed by a physician",
+        "One-week supply"
+      ]
+    }
   ],
-  "physicalsNote": "Call for pricing"
+  "physicalsNote": "Call for pricing",
+  "showPhysicalPrices": true,
+  "payment": "Cash or credit card. We do not bill insurance for physicals or N-648 consultations.",
+  "immigration": [
+    {
+      "ages": "2–17",
+      "tests": "Exam and QuantiFERON TB blood test",
+      "price": "$270"
+    },
+    {
+      "ages": "18–24",
+      "tests": "Exam, QuantiFERON, RPR (syphilis) with reflex, and gonorrhea test",
+      "price": "$335"
+    },
+    {
+      "ages": "25–44",
+      "tests": "Exam, QuantiFERON and RPR with reflex",
+      "price": "$290"
+    },
+    {
+      "ages": "45 and older",
+      "tests": "Exam and QuantiFERON",
+      "price": "$270"
+    }
+  ],
+  "immigrationRprFollowUp": "$100",
+  "n648": {
+    "qualify": "$200",
+    "notQualify": "$100"
+  },
+  "glp1": "Call for pricing"
 }

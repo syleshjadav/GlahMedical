@@ -7,27 +7,59 @@ permalink: /physicals/immigration-i-693/
 eyebrow: Immigration physical
 heading: Immigration medical exam (Form I-693)
 lead: "Form I-693, the Report of Immigration Medical Examination and Vaccination Record, is required for most green card applications filed inside the United States. It must be completed by a USCIS-designated civil surgeon."
-description: "USCIS Form I-693 immigration medical exams in Lancaster and Camp Hill, PA, by a USCIS-designated civil surgeon at Glah Medical Group. What to bring and what to expect."
+description: "USCIS Form I-693 immigration medical exams in Camp Hill and Lancaster, PA, with a USCIS-designated civil surgeon at Glah Medical Group. What to bring, how to fill out the form, lab tests, vaccines and picking up your sealed envelope."
 ctaHeading: Schedule your immigration exam
 ---
+{%- set ch = site.offices | byId("camp-hill") %}
 <section class="section">
   <div class="container">
     <div class="row g-5">
       <div class="col-lg-7 prose">
-        <h2>A designated civil surgeon, at both offices</h2>
-        <p>USCIS only accepts Form I-693 when it is completed and signed by a civil surgeon it has designated. {% if physicals.civilSurgeonName | pending %}Our physician is{% else %}{{ physicals.civilSurgeonName }} is{% endif %} a USCIS-designated civil surgeon, and you can schedule your exam at either our Lancaster or Camp Hill office. You can confirm any civil surgeon's designation with the <a href="{{ links.uscisCivilSurgeons }}" rel="noopener" target="_blank">USCIS civil surgeon locator<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
+        <h2>A designated civil surgeon</h2>
+        <p>USCIS only accepts Form I-693 when it is completed and signed by a civil surgeon it has designated. {% if physicals.civilSurgeonName | pending %}Our physician is{% else %}{{ physicals.civilSurgeonName }} is{% endif %} a USCIS-designated civil surgeon. You can confirm any civil surgeon's designation with the <a href="{{ links.uscisCivilSurgeons }}" rel="noopener" target="_blank">USCIS civil surgeon locator<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
 
-        <h2>What the exam includes</h2>
-        <p>The exam follows the Technical Instructions for civil surgeons published by the CDC. It shows USCIS that you are not inadmissible on public health grounds. It generally includes:</p>
-        <ul class="check-list">
-          <li>A review of your medical history and a physical examination</li>
-          <li>A review of your vaccination records, and any vaccines you still need</li>
-          <li>Required lab tests, such as a blood test for tuberculosis</li>
+        <h2>Tests by age</h2>
+        <p>The exam follows the CDC's Technical Instructions for civil surgeons. The lab tests you need depend on your age:</p>
+        <div class="table-responsive compare-wrap mb-3">
+          <table class="table age-table mb-0">
+            <caption class="visually-hidden">Immigration exam tests by age{% if pricing.showPhysicalPrices %}, with total cost{% endif %}</caption>
+            <thead><tr><th scope="col">Age</th><th scope="col">Exam and tests</th>{% if pricing.showPhysicalPrices %}<th scope="col">Total cost</th>{% endif %}</tr></thead>
+            <tbody>
+              {%- for r in pricing.immigration %}
+              <tr><th scope="row">{{ r.ages }}</th><td>{{ r.tests }}</td>{% if pricing.showPhysicalPrices %}<td>{{ r.price }}</td>{% endif %}</tr>
+              {%- endfor %}
+            </tbody>
+          </table>
+        </div>
+        <p class="fine-print">QuantiFERON is a blood test for tuberculosis (TB). RPR is a blood test for syphilis; "with reflex" means the lab automatically runs a confirming test if the first result is reactive.</p>
+
+        <h2>Step by step</h2>
+        <ol class="steps steps-compact">
+          <li><span class="step-num" aria-hidden="true">1</span><div><h3>Your exam with the doctor</h3><p>{{ physicals.civilSurgeonName if not (physicals.civilSurgeonName | pending) else "The doctor" }} reviews your health history and vaccination record and examines you. You leave with a lab order for your blood tests and urine test.</p></div></li>
+          <li><span class="step-num" aria-hidden="true">2</span><div><h3>Lab tests at Quest Diagnostics</h3><p>Take the lab order with your name on it to any Quest Diagnostics location. You can walk in, or <a href="{{ links.questAppointment }}" rel="noopener" target="_blank">make an appointment online<span class="visually-hidden"> (opens in a new tab)</span></a> or by calling <a href="tel:+1{{ links.questPhone | replace('-', '') }}">{{ links.questPhone }}</a>. You already paid for the tests at our office, so <strong>do not pay or give your insurance information at the lab</strong>.</p></div></li>
+          <li><span class="step-num" aria-hidden="true">3</span><div><h3>Results</h3><p>The lab faxes your results to us in 4 to 6 days, and we email you when we have them. If your TB blood test is positive, you will need a chest X-ray at a local imaging center. If your RPR test is reactive, the lab runs one more test{% if pricing.showPhysicalPrices %} ({{ pricing.immigrationRprFollowUp }}, paid at our office before you pick up your form){% endif %}.</p></div></li>
+          <li><span class="step-num" aria-hidden="true">4</span><div><h3>Any vaccines you still need</h3><p>See the vaccine list on this page. Once you have your vaccines, take a photo of your vaccination record and email it to <a href="mailto:{{ ch.email }}">{{ ch.email }}</a>.</p></div></li>
+          <li><span class="step-num" aria-hidden="true">5</span><div><h3>Pick up your sealed envelope</h3><p>When we have everything, we complete your Form I-693 and let you know it is ready. Pick it up at our Camp Hill or Lancaster office. Tell us which one you prefer.</p></div></li>
+        </ol>
+
+        <h2 class="mt-5" id="vaccines">Required vaccines</h2>
+        <p>Everyone needs these vaccines, or proof that you already had them. Other vaccines may be required depending on your age.</p>
+        <ul class="check-list check-columns">
+          <li>MMR (measles, mumps, rubella)</li>
+          <li>Tdap (tetanus, diphtheria, pertussis)</li>
+          <li>Varicella (chickenpox)</li>
+          <li>Hepatitis B</li>
+          <li>Polio</li>
+          <li>Influenza (flu), from September 1 to March 31</li>
         </ul>
-        <p>Some lab results take a few days, so plan on more than one visit. We will tell you what your exam requires when you schedule.</p>
+        <p>If you need a vaccine, the doctor can give you a prescription for it. You can get vaccines:</p>
+        <ul>
+          <li><strong>At your county health department.</strong> Call them for an appointment. Vaccines are free there if you do not have health insurance.</li>
+          <li><strong>At a pharmacy</strong> (such as CVS, Walmart, Giant or Walgreens) <strong>or your own doctor's office.</strong> You pay, or use your health insurance if it covers vaccines.</li>
+        </ul>
 
         <h2>Your sealed envelope</h2>
-        <p>When your exam is complete, we give you the signed Form I-693 in a sealed envelope. Do not open it. USCIS returns forms that are unsealed or altered. You, not our office, are responsible for sending it to USCIS.</p>
+        <p>You receive your completed Form I-693 in a sealed envelope, plus a copy of everything inside it for your own records. <strong>Do not open the envelope.</strong> USCIS returns forms that are unsealed or altered. You can submit it to USCIS or give it to your attorney.</p>
 
         <h2>Timing</h2>
         <p>USCIS rules on when Form I-693 must be filed and how long the results stay valid have changed several times. Before you schedule, check the current rules on the <a href="{{ links.uscisI693 }}" rel="noopener" target="_blank">USCIS Form I-693 page<span class="visually-hidden"> (opens in a new tab)</span></a>, or ask your immigration attorney, so your exam is not done too early.</p>
@@ -36,17 +68,33 @@ ctaHeading: Schedule your immigration exam
         <aside class="values-card mb-4" aria-labelledby="bring-heading">
           <h2 id="bring-heading" class="h4">What to bring</h2>
           <ul class="check-list mb-0">
-            <li>A government-issued photo ID, such as your passport</li>
-            <li>Your vaccination records, in English or with a translation</li>
-            <li>A list of the medicines you take</li>
-            <li>Records of any past chest X-rays or tuberculosis treatment</li>
-            <li>Your eyeglasses or contacts, if you wear them</li>
-            <li>Your Form I-693 with Part 1 filled in, but <strong>not signed</strong>. You sign it in front of the civil surgeon.</li>
+            <li><strong>Government-issued photo ID</strong>, such as a valid passport or driver's license. Age 14 or younger: ID showing your name, date and place of birth and a parent's full name, such as a birth certificate (with an English translation) or an affidavit.</li>
+            <li>Your <strong>vaccination or immunization record</strong></li>
+            <li><strong>Payment:</strong> {{ pricing.payment }}</li>
+            <li>Your <strong>printed Form I-693</strong>, filled out as shown below</li>
+            <li>The <strong>Personal Data Sheet</strong>, printed and completed. We email it to you when you schedule.</li>
+            <li>Your interpreter or preparer, if one is listed on your form</li>
           </ul>
+        </aside>
+        <aside class="values-card mb-4" aria-labelledby="form-heading">
+          <h2 id="form-heading" class="h4">Filling out Form I-693</h2>
+          <ul class="check-list mb-3">
+            <li><a href="{{ links.uscisI693Pdf }}" rel="noopener" target="_blank">Download the form from USCIS<span class="visually-hidden"> (PDF, opens in a new tab)</span></a> and print it <strong>one-sided</strong>. Each page should show a bar code and page number at the bottom.</li>
+            <li>Use <strong>black ink</strong> and write in <strong>ALL CAPITAL LETTERS</strong>.</li>
+            <li><strong>Page 1:</strong> fill in the whole page.</li>
+            <li><strong>Page 2:</strong> fill in your phone number and email address. <strong>Do not sign.</strong> You sign in front of the doctor.</li>
+            <li><strong>Top of every page after page 1:</strong> print your last, first and middle name, and your A-Number if you have one.</li>
+          </ul>
+          <p class="fine-print mb-0">If the interpreter or preparer section is filled out, that person <strong>must come to the appointment with you</strong>.</p>
         </aside>
         <aside class="info-panel" aria-labelledby="price-heading">
           <h2 id="price-heading" class="h5">Cost</h2>
-          <p class="mb-2">{{ pricing.physicalsNote }}. Fees for any required vaccines or lab tests are explained when you schedule.</p>
+          {%- if pricing.showPhysicalPrices %}
+          <p class="mb-2">The total depends on your age (see the table). It covers the exam and your lab tests.</p>
+          {%- else %}
+          <p class="mb-2">{{ pricing.physicalsNote }}. The total depends on your age and the lab tests you need.</p>
+          {%- endif %}
+          <p class="mb-2">{{ pricing.payment }}</p>
           <p class="mb-0 fine-print">Official information: <a href="{{ links.uscisI693 }}" rel="noopener" target="_blank">uscis.gov/i-693<span class="visually-hidden"> (opens in a new tab)</span></a></p>
         </aside>
       </div>

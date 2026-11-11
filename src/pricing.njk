@@ -4,7 +4,7 @@ title: Pricing
 permalink: /pricing/
 eyebrow: Simple, clear pricing
 heading: What it costs
-lead: "No contracts and no expensive packaged foods. For weight loss, you pay per visit. For physicals, call either office for pricing."
+lead: "No contracts and no expensive packaged foods. For weight loss, you pay per visit. For GLP-1 medication and physicals, call either office for pricing."
 description: "Glah Medical Group pricing: $65 initial weight loss consultation, $40 follow-up office visits, appetite suppressants $8–$16 per week if prescribed. Call for physical exam pricing."
 ---
 <section class="section">
@@ -31,26 +31,46 @@ description: "Glah Medical Group pricing: $65 initial weight loss consultation, 
   </div>
 </section>
 
+<section class="section pt-0" aria-labelledby="glp1-price-heading">
+  <div class="container">
+    <div class="glp1-band">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-8">
+          <h2 id="glp1-price-heading" class="h3">GLP-1 weight loss medication</h2>
+          <p class="mb-0"><span class="price-call">{{ pricing.glp1 }}</span>. Compounded semaglutide or tirzepatide, each with vitamin B‑12. Cost depends on the medicine and dose; we explain it before you start. {{ glp1.insurance }}</p>
+        </div>
+        <div class="col-lg-4 text-lg-end"><a class="btn btn-outline-primary" href="/weight-loss/glp-1/">About GLP-1</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section section-tint" aria-labelledby="phys-price-heading">
   <div class="container">
     <div class="section-head">
-      <h2 id="phys-price-heading">Physical exams</h2>
+      <h2 id="phys-price-heading">Physicals and medical forms</h2>
       <p class="section-intro">Prices depend on the form and any vaccines or lab tests you need. Call either office and we will give you the price before you book.</p>
     </div>
     <div class="row g-4">
       {%- for p in physicals.list %}
-      <div class="col-md-4">
+      <div class="col-md-6 col-lg-3">
         <a class="feature-card" href="{{ p.url }}">
           <span class="feature-icon"><i class="fa-solid {{ p.icon }}" aria-hidden="true"></i></span>
           <h3>{{ p.short }}</h3>
+          {%- if pricing.showPhysicalPrices and p.id == "immigration-i-693" %}
+          <p class="price-call">From {{ pricing.immigration[0].price }}, by age</p>
+          {%- elif pricing.showPhysicalPrices and p.id == "disability-exception" %}
+          <p class="price-call">{{ pricing.n648.notQualify }}–{{ pricing.n648.qualify }}</p>
+          {%- else %}
           <p class="price-call">{{ pricing.physicalsNote }}</p>
+          {%- endif %}
         </a>
       </div>
       {%- endfor %}
     </div>
     <div class="ins-note mt-4" role="note">
       <i class="fa-solid fa-phone" aria-hidden="true"></i>
-      <p class="mb-0"><strong>Insurance and payment:</strong> please call
+      <p class="mb-0"><strong>Insurance and payment:</strong> {{ pricing.payment }} For weight loss and GLP-1 visits, please call
         {%- for o in site.offices %} {{ o.name }} <a href="tel:{{ o.phoneHref }}">{{ o.phone }}</a>{% if not loop.last %} or{% endif %}{% endfor %} to ask about payment options before your first visit.</p>
     </div>
   </div>

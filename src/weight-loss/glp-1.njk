@@ -1,0 +1,68 @@
+---
+layout: layouts/page.njk
+title: GLP-1 Weight Loss Medication
+crumb: GLP-1 medication
+parent: { url: "/weight-loss/", label: "Weight Loss" }
+permalink: /weight-loss/glp-1/
+eyebrow: GLP-1 weight loss medication
+heading: GLP-1 medication, with a doctor and a plan behind it
+lead: "GLP-1 medicines can make weight loss easier by helping you feel full sooner and stay full longer. At Glah Medical Group, they come with what we have done for more than 40 years: a physician watching your progress and an eating plan you can keep for life."
+description: "Compounded semaglutide and tirzepatide with vitamin B‑12, prescribed by a physician at Glah Medical Group in Lancaster and Camp Hill, PA, with a personal eating plan and help with insurance coverage."
+ctaHeading: Ask if a GLP-1 is right for you
+---
+<section class="section">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-7 prose">
+        <h2>What GLP-1 medicines do</h2>
+        <p>GLP-1 medicines copy a hormone your body already makes after you eat. They slow how fast your stomach empties and help quiet hunger signals, so many people eat less without feeling deprived.</p>
+
+        <h2>What we offer</h2>
+        <p>We offer two compounded GLP-1 medicines, each combined with vitamin B‑12:</p>
+        <div class="row g-3 mb-3">
+          {%- for m in glp1.medications %}
+          <div class="col-sm-6">
+            <div class="feature-card feature-card-static">
+              <span class="feature-icon"><i class="fa-solid fa-prescription-bottle-medical" aria-hidden="true"></i></span>
+              <h3 class="h5">{{ m.name }}</h3>
+              <p>{{ m.note }}</p>
+            </div>
+          </div>
+          {%- endfor %}
+        </div>
+        <p class="fine-print">Compounded medicines are prepared for you by a licensed pharmacy. They are not FDA-approved and are not the same as brand-name Wegovy® or Zepbound®. Wegovy and Zepbound are trademarks of their owners.</p>
+
+        <h2>Why get it here</h2>
+        <ul class="check-list">
+          <li><strong>A physician decides if it is right for you.</strong> We review your health history and current medicines first. A GLP-1 is not safe or right for everyone.</li>
+          <li><strong>Medication plus an eating plan.</strong> The medicine helps with appetite. Our eating plan, built on food from your own grocery store, teaches habits that help you keep the weight off.</li>
+          <li><strong>Regular check-ins.</strong> We check your weight and blood pressure, ask how you feel, and adjust your plan and dose as you go.</li>
+          <li><strong>40+ years of weight loss care</strong> in Lancaster and Camp Hill.</li>
+        </ul>
+        {%- if not (glp1.howItWorksAtGlah | pending) %}
+        <h2>How our GLP-1 program works</h2>
+        <p>{{ glp1.howItWorksAtGlah }}</p>
+        {%- endif %}
+
+        <h2>Side effects</h2>
+        <p>The most common side effects are stomach-related, such as nausea, especially when starting or raising the dose. The doctor goes over the risks and side effects with you before you start and at each visit. Tell us right away about any side effects you have.</p>
+      </div>
+      <div class="col-lg-5">
+        <aside class="values-card mb-4" aria-labelledby="start-heading">
+          <h2 id="start-heading" class="h4">Getting started</h2>
+          <ol class="steps steps-compact">
+            <li><span class="step-num" aria-hidden="true">1</span><div><h3>Call or send a request</h3><p>Either office can schedule you.</p></div></li>
+            <li><span class="step-num" aria-hidden="true">2</span><div><h3>Consultation</h3><p>Health history, weight, blood pressure and your goals.</p></div></li>
+            <li><span class="step-num" aria-hidden="true">3</span><div><h3>Your plan</h3><p>If a GLP-1 is right for you, the doctor prescribes it with your eating plan.</p></div></li>
+          </ol>
+        </aside>
+        <aside class="info-panel" aria-labelledby="price-heading">
+          <h2 id="price-heading" class="h5">Cost</h2>
+          <p class="mb-2">{{ pricing.glp1 }}. Call either office and we will explain the cost before you start.</p>
+          <p class="mb-0"><strong>Insurance:</strong> {{ glp1.insurance }}</p>
+        </aside>
+      </div>
+    </div>
+    <p class="fine-print mt-4 mb-0">Individual results vary. GLP-1 medicines are prescription medicines and are only prescribed after a physician evaluation.</p>
+  </div>
+</section>

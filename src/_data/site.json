@@ -3,45 +3,100 @@
   "name": "Glah Medical Group",
   "shortName": "Glah",
   "legalName": "Glah Medical Group",
-  "tagline": "Physician-guided weight loss and physical exams in Lancaster and Camp Hill, PA",
+  "tagline": "Physician-guided weight loss, GLP-1 medication and immigration physicals in Lancaster and Camp Hill, PA",
   "url": "https://glahmedicalgroup.com",
   "email": "glahmedicalgroup@yahoo.com",
   "yearsInPractice": "40+",
   "_turnstileSiteKey": "Public Cloudflare Turnstile site key (safe to commit). The Worker swaps in TURNSTILE_SITE_KEY when that variable is set, e.g. the always-pass test key for local preview and the demo.",
   "turnstileSiteKey": "0x4AAAAAAFPSQSI6R2yAKXkG",
-  "_offices": "Both offices offer weight loss visits and all three physicals. Leave hours empty to show 'Call for current hours'. hoursSchema is the search-engine version of hours; keep both in sync.",
+  "_offices": "Leave hours empty to show 'Call for current hours'. hoursSchema is the search-engine version of hours; keep both in sync. Hours come from the practice (Nov 2026).",
   "offices": [
     {
       "id": "lancaster",
       "name": "Lancaster",
       "phone": "717-397-7718",
       "phoneHref": "+17173977718",
+      "fax": "",
+      "email": "glahmedicalgroup@yahoo.com",
       "street": "2207 Columbia Ave",
       "city": "Lancaster",
       "state": "PA",
-      "zip": "",
+      "zip": "17603",
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Glah+Medical+Group+2207+Columbia+Ave+Lancaster+PA",
-      "hours": [],
-      "hoursSchema": []
+      "directions": "",
+      "hours": [
+        {
+          "days": "Monday",
+          "time": "7:30 a.m.–12:00 p.m., 2:00–5:30 p.m."
+        },
+        {
+          "days": "Tuesday",
+          "time": "7:30–11:45 a.m."
+        },
+        {
+          "days": "Wednesday",
+          "time": "Closed"
+        },
+        {
+          "days": "Thursday",
+          "time": "7:30 a.m.–12:00 p.m., 2:00–5:30 p.m."
+        },
+        {
+          "days": "Friday",
+          "time": "Closed"
+        }
+      ],
+      "hoursSchema": [
+        "Mo,Th 07:30-12:00",
+        "Mo,Th 14:00-17:30",
+        "Tu 07:30-11:45"
+      ]
     },
     {
       "id": "camp-hill",
       "name": "Camp Hill",
       "phone": "717-737-8400",
       "phoneHref": "+17177378400",
-      "street": "xxxx",
+      "fax": "717-737-2250",
+      "email": "glahmedicalgroupch@gmail.com",
+      "street": "797 Poplar Church Rd",
       "city": "Camp Hill",
       "state": "PA",
-      "zip": "",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Glah+Medical+Group+Camp+Hill+PA",
-      "hours": [],
-      "hoursSchema": []
+      "zip": "17011",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=797+Poplar+Church+Rd+Camp+Hill+PA+17011",
+      "directions": "Look for the sign that says “Hampden Surgeons/Glah Medical Group.” The office is a small ranch house. Park behind the building.",
+      "hours": [
+        {
+          "days": "Tuesday",
+          "time": "2:00–6:00 p.m."
+        },
+        {
+          "days": "Friday",
+          "time": "7:30 a.m.–12:00 p.m."
+        }
+      ],
+      "hoursSchema": [
+        "Tu 14:00-18:00",
+        "Fr 07:30-12:00"
+      ]
     }
   ],
   "social": [
-    { "name": "Facebook", "icon": "fa-facebook-f", "url": "https://www.facebook.com/glahmedicalgroup/" },
-    { "name": "Instagram", "icon": "fa-instagram", "url": "https://www.instagram.com/glahmedicalgroup/" },
-    { "name": "Pinterest", "icon": "fa-pinterest-p", "url": "https://www.pinterest.com/glahmedicalgroup/" }
+    {
+      "name": "Facebook",
+      "icon": "fa-facebook-f",
+      "url": "https://www.facebook.com/glahmedicalgroup/"
+    },
+    {
+      "name": "Instagram",
+      "icon": "fa-instagram",
+      "url": "https://www.instagram.com/glahmedicalgroup/"
+    },
+    {
+      "name": "Pinterest",
+      "icon": "fa-pinterest-p",
+      "url": "https://www.pinterest.com/glahmedicalgroup/"
+    }
   ],
-  "assetVersion": "2.0.0"
+  "assetVersion": "2.3.0"
 }

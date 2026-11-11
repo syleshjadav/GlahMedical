@@ -7,6 +7,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("year", () => new Date().getFullYear());
   eleventyConfig.addFilter("json", (value) => JSON.stringify(value));
   eleventyConfig.addFilter("isoDate", (d) => new Date(d).toISOString().slice(0, 10));
+  // Find one item in a list by its id, e.g. site.offices | byId("camp-hill").
+  eleventyConfig.addFilter("byId", (list, id) => (list || []).find((x) => x.id === id));
   // True when a practice detail is still the "xxxx" placeholder.
   eleventyConfig.addFilter("pending", (v) => !v || String(v).trim().toLowerCase() === "xxxx");
 

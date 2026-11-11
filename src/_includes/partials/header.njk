@@ -1,6 +1,6 @@
 {%- set nav = [
-  { url: "/", label: "Home" },
   { url: "/weight-loss/", label: "Weight Loss" },
+  { url: "/weight-loss/glp-1/", label: "GLP-1" },
   { url: "/physicals/", label: "Physicals" },
   { url: "/pricing/", label: "Pricing" },
   { url: "/faq/", label: "FAQ" },
@@ -21,9 +21,7 @@
   <nav class="navbar navbar-expand-xl main-nav" aria-label="Main">
     <div class="container">
       <a class="navbar-brand brand" href="/">
-        <img src="/assets/img/logo-mark.svg" width="44" height="44" alt="">
-        <span class="brand-text"><span class="brand-name">{{ site.name }}</span><span class="brand-sub">Weight loss &amp; physicals</span></span>
-        <span class="visually-hidden"> home</span>
+        <img class="brand-logo" src="/assets/img/logo.svg?v={{ site.assetVersion }}" width="169" height="52" alt="{{ site.name }} home">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Open menu">
         <span class="navbar-toggler-icon"></span>
@@ -31,7 +29,7 @@
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto align-items-xl-center">
           {%- for item in nav %}
-          {%- set active = (page.url == item.url) or (item.url != "/" and page.url.startsWith(item.url)) %}
+          {%- set active = (page.url == item.url) or (item.url != "/" and page.url.startsWith(item.url) and not page.url.startsWith("/weight-loss/glp-1/")) %}
           <li class="nav-item"><a class="nav-link{% if active %} active{% endif %}" href="{{ item.url }}"{% if active %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
           {%- endfor %}
           <li class="nav-item nav-cta"><a class="btn btn-primary" href="/contact/#request"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Request appointment</a></li>

@@ -1,6 +1,6 @@
 {
-  "_comment": "The three physical exams. Each has its own page under /physicals/. civilSurgeonName: the USCIS-designated civil surgeon's name as listed in the USCIS civil surgeon locator (xxxx until the practice confirms; the page reads fine without it).",
-  "civilSurgeonName": "xxxx",
+  "_comment": "Physical exams and immigration medical forms. Each has its own page under /physicals/. civilSurgeonName: the USCIS-designated civil surgeon as listed in the USCIS civil surgeon locator.",
+  "civilSurgeonName": "Dr. Haldipur",
   "list": [
     {
       "id": "immigration-i-693",
@@ -9,6 +9,14 @@
       "short": "Immigration (I-693)",
       "icon": "fa-passport",
       "summary": "The USCIS medical exam and vaccination record for green card applicants, completed by a USCIS-designated civil surgeon."
+    },
+    {
+      "id": "disability-exception",
+      "url": "/physicals/disability-exception-n-648/",
+      "name": "Disability exception for citizenship (Form N-648)",
+      "short": "Disability exception (N-648)",
+      "icon": "fa-file-signature",
+      "summary": "A physician review of your medical records to see if you qualify for an exception to the English and civics tests for U.S. citizenship."
     },
     {
       "id": "drivers-license",

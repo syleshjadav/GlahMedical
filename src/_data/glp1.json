@@ -1,9 +1,15 @@
 {
-  "_comment": "GLP-1 page details from the practice (Nov 2026). Values marked xxxx are hidden on the site until filled in. Brand names are trademarks of their owners; keep the compounded-medication disclosure on the page.",
+  "_comment": "GLP-1 page details from the practice (Nov 2026). Values marked xxxx are hidden on the site until filled in. howItWorksAtGlah is DRAFT text pending review by Dr. Haldipur and Beth. Brand names are trademarks of their owners; keep the compounded-medication disclosure on the page.",
   "medications": [
-    { "name": "Semaglutide with vitamin B‑12", "note": "Semaglutide is the active ingredient found in Wegovy®." },
-    { "name": "Tirzepatide with vitamin B‑12", "note": "Tirzepatide is the active ingredient found in Zepbound®." }
+    {
+      "name": "Semaglutide with vitamin B‑12",
+      "note": "Semaglutide is the active ingredient found in Wegovy®."
+    },
+    {
+      "name": "Tirzepatide with vitamin B‑12",
+      "note": "Tirzepatide is the active ingredient found in Zepbound®."
+    }
   ],
   "insurance": "We also work with insurance companies to try to get your medication covered.",
-  "howItWorksAtGlah": "xxxx"
+  "howItWorksAtGlah": "Before you start, a physician reviews your health history, current medicines and goals, and checks your weight and blood pressure. If a GLP-1 medicine is right for you, the physician prescribes it and it is paired with your personal eating plan. You come in for regular check-ins, where we weigh you, check your blood pressure, ask how you are feeling, and adjust your plan and dose as needed."
 }

@@ -4,6 +4,11 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/lib": "lib" });
   eleventyConfig.addPassthroughCopy({ "src/favicon.ico": "favicon.ico" });
 
+  // Pages removed from the site. Delete these files from the repo when convenient.
+  eleventyConfig.ignores.add("src/physicals.njk");
+  eleventyConfig.ignores.add("src/physicals/drivers-license.njk");
+  eleventyConfig.ignores.add("src/physicals/school.njk");
+
   eleventyConfig.addFilter("year", () => new Date().getFullYear());
   eleventyConfig.addFilter("json", (value) => JSON.stringify(value));
   eleventyConfig.addFilter("isoDate", (d) => new Date(d).toISOString().slice(0, 10));

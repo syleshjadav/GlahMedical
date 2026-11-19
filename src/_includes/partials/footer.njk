@@ -3,7 +3,7 @@
     <div class="row g-5">
       <div class="col-lg-3">
         <p class="footer-brand"><img src="/assets/img/logo-white.svg?v={{ site.assetVersion }}" width="208" height="64" alt="{{ site.name }}"></p>
-        <p class="footer-text">Physician-based weight loss counseling for over 40 years, GLP-1 medication, and immigration, driver's license and school physicals, in Lancaster and Camp Hill.</p>
+        <p class="footer-text">Physician-based weight loss counseling for over 40 years, and immigration medical exams, in Lancaster and Camp Hill.</p>
         <ul class="social list-unstyled d-flex gap-2 mb-0">
           {%- for s in site.social %}
           <li><a href="{{ s.url }}" rel="noopener" target="_blank"><i class="fa-brands {{ s.icon }}" aria-hidden="true"></i><span class="visually-hidden">{{ s.name }} (opens in a new tab)</span></a></li>
@@ -24,11 +24,10 @@
       <div class="col-sm-6 col-lg-3">
         <h2 class="footer-heading">Services</h2>
         <ul class="list-unstyled footer-text footer-list">
-          <li><a href="/weight-loss/">Weight loss</a></li>
-          <li><a href="/weight-loss/glp-1/">GLP-1 medication</a></li>
-          {%- for p in physicals.list %}
-          <li><a href="{{ p.url }}">{{ p.short }}</a></li>
-          {%- endfor %}
+          <li><a href="/weight-loss/">Weight loss &amp; nutrition</a></li>
+          <li><a href="/immigration/">Immigration services</a></li>
+          <li><a href="/immigration/#refugee">Refugee vaccination documentation</a></li>
+          <li><a href="/about/">About us</a></li>
           <li><a href="/pricing/">Pricing</a></li>
         </ul>
       </div>

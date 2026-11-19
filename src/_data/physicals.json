@@ -17,22 +17,6 @@
       "short": "Disability exception (N-648)",
       "icon": "fa-file-signature",
       "summary": "A physician review of your medical records to see if you qualify for an exception to the English and civics tests for U.S. citizenship."
-    },
-    {
-      "id": "drivers-license",
-      "url": "/physicals/drivers-license/",
-      "name": "Driver's license physical (PennDOT DL-180)",
-      "short": "Driver's license (DL-180)",
-      "icon": "fa-id-card",
-      "summary": "The physical exam you need for a Pennsylvania non-commercial learner's permit. We complete the medical part of your DL-180."
-    },
-    {
-      "id": "school",
-      "url": "/physicals/school/",
-      "name": "School physical",
-      "short": "School physical",
-      "icon": "fa-graduation-cap",
-      "summary": "The physical Pennsylvania requires at school entry, 6th grade and 11th grade, on the Department of Health form."
     }
   ]
 }

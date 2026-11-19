@@ -26,9 +26,8 @@ const SERVICES = [
   "Weight loss follow-up visit",
   "GLP-1 weight loss medication",
   "Immigration physical (Form I-693)",
+  "Refugee vaccination documentation (Form I-693)",
   "Disability exception consultation (Form N-648)",
-  "Driver's license physical (DL-180)",
-  "School physical",
   "Other question"
 ];
 const TIMES = ["Morning", "Afternoon", "Any time"];

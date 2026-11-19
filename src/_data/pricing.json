@@ -65,5 +65,6 @@
     "qualify": "$200",
     "notQualify": "$100"
   },
-  "glp1": "Call for pricing"
+  "glp1": "Call for pricing",
+  "refugeeVaccination": "$100"
 }
